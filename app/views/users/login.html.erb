@@ -1,0 +1,60 @@
+
+        <!-- Navigation Bar -->
+        <div class="row strip">
+                <div class="col-md-2"></div>
+                <div class="col-md-1">
+                    <!-- <a href="chill"><%= image_tag("arrow-left.png", class: "arrow center-block") %></a> -->
+                </div>
+                <div class="col-md-1">
+                    <%= image_tag("relax.png", class: "icon green") %>
+                </div>
+                <div class="col-md-1 lit">
+                    <%= image_tag("check.png", class: "icon orange") %>
+                </div>
+                <div class="col-md-1">
+                    <%= image_tag("character.png", class: "icon purple") %>
+                </div>
+                <div class="col-md-1">
+                    <%= image_tag("strong.png", class: "icon blue") %>
+                </div>
+                <div class="col-md-1">
+                    <%= image_tag("learn.png", class: "icon pink") %>
+                </div>
+                <div class="col-md-1">
+                    <%= image_tag("done.png", class: "icon darkpink") %>
+                </div>
+                <div class="col-md-1">
+                    <!-- <a href="step3.1.html.erb"><%= image_tag("arrow-right.png", class: "arrow center-block") %></a> -->
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        
+        
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p class="title motto orange-text">Check In</p>
+                    <p class="desc">You are sitting in the recovery chair, which means you were disruptive in class. Now, you need to take responsibility.</p>
+                </div>
+                <div class="col-md-2"></div>
+        </div>
+        <div class="row filler"></div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 center">
+
+                
+
+                <%= form_tag("post_login", method: "post") do %>
+                    <p class="prompt center"><b>Hello, my name is </b><font color="black"><%= text_field_tag(:username)%></font></p>
+                    <p class="prompt-black inline"><b class="prompt">I am here because</b>
+
+                    <%= select_tag(:reason_num, options_for_select([['I spoke when I was supposed to be quiet.', 1], ['I used inappropriate language.', 2], ['I was mean to a classmate.', 3], ['I was disruptive to the class.', 4]]))%></p><br>
+
+                    <div class="row filler"></div>
+                    <p class="submit rounded orange-text"><%= submit_tag("Submit") %></p>
+                <% end %>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
