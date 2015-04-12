@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308225407) do
-
-  create_table "reasons", force: true do |t|
-    t.string   "reason_text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20150411235409) do
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -29,17 +23,17 @@ ActiveRecord::Schema.define(version: 20150308225407) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
-  create_table "users", force: true do |t|
+  create_table "students", force: true do |t|
     t.string   "username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "visit_count"
     t.integer  "current_reason_num"
     t.integer  "current_visit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "visits", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "student_id"
     t.datetime "date_time"
     t.string   "reason_num"
     t.string   "task_choice"

@@ -1,7 +1,7 @@
 class CreateVisits < ActiveRecord::Migration
   def change
     create_table :visits do |t|
-    	t.integer	:user_id
+    	t.integer	:student_id
     	t.datetime	:date_time
     	t.string	:reason_num
     	t.string	:task_choice
