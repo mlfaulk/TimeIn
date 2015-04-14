@@ -114,9 +114,22 @@ class StudentsController < ApplicationController
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
 		@name = student.firstname
+		
+
+		visit_id = student.current_visit_id
+		visit = Visit.find(visit_id)
+		@text = visit.task_text
+
+		gender_num = student.gender
+		if (gender_num == 1) then
+			@pronoun = "she"
+		else 
+			@pronoun = "he"
+		end
+
 		reason_num = student.current_reason_num
 		if (reason_num == 1) then
-			@reason = "spoke when he/she was supposed to be quiet."
+			@reason = "spoke when " + @pronoun + " was supposed to be quiet."
 		end
 		if (reason_num == 2) then 
 			@reason = "used inappropriate language."
@@ -128,9 +141,6 @@ class StudentsController < ApplicationController
 			@reason = "was disruptive to the class."
 		end
 
-		visit_id = student.current_visit_id
-		visit = Visit.find(visit_id)
-		@text = visit.task_text
 
 
 	end
