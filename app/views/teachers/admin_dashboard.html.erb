@@ -1,0 +1,6 @@
+<h3> MY STUDENTS </h3>
+<% for student in @students do %>
+		
+		<%= link_to student.firstname, controller: "teachers", action: "admin_student_profile", id: student.id %>
+
+<% end %>

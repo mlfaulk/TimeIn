@@ -16,17 +16,7 @@ class StudentsController < ApplicationController
 		#end
 
 
-		 
-		#student = nil
-		#for candidate in Student.all do 
-			#if candidate.firstname.downcase == username.downcase then
-				#student = candidate
-				
-			#end
-
-		#end
-
-		student = Student.find_by_firstname(username)
+		student = Student.find_by_username(username)
 		if student == nil then
 			#create new student
 			new_student = Student.new
