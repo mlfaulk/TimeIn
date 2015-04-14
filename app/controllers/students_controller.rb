@@ -15,7 +15,18 @@ class StudentsController < ApplicationController
 			#render action: "login"
 		#end
 
-		student = Student.find_by_username(username)
+
+		 
+		#student = nil
+		#for candidate in Student.all do 
+			#if candidate.firstname.downcase == username.downcase then
+				#student = candidate
+				
+			#end
+
+		#end
+
+		student = Student.find_by_firstname(username)
 		if student == nil then
 			#create new student
 			new_student = Student.new
@@ -28,7 +39,8 @@ class StudentsController < ApplicationController
 				new_visit = Visit.new
 				new_visit.student_id = new_student.id
 				new_visit.date_time = DateTime.now
-				new_visit.reason_num = params[:reason_num]
+				#new_visit.reason_num = params[:reason_num]
+				new_visit.reason_num = 100
 				new_visit.save
 				new_student.current_visit_id = new_visit.id
 				new_student.save
@@ -46,7 +58,6 @@ class StudentsController < ApplicationController
 			new_visit.date_time = DateTime.now
 			new_visit.reason_num = params[:reason_num]
 			new_visit.save
-			#new_visit.reason = 
 			#update visit count
 			visits = student.visit_count
 			student.visit_count = visits + 1
@@ -63,7 +74,7 @@ class StudentsController < ApplicationController
 	def character()
 		student_id = params[:id]
 		student = Student.find(student_id)
-		@name = student.username
+		@name = student.firstname
 	end
 
 	def learn()
@@ -112,7 +123,7 @@ class StudentsController < ApplicationController
 	def finish() 
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
-		@name = student.username
+		@name = student.firstname
 		reason_num = student.current_reason_num
 		if (reason_num == 1) then
 			@reason = "spoke when he/she was supposed to be quiet."
