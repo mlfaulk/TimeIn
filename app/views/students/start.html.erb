@@ -6,22 +6,19 @@
 	</div>
 
 
-	<a href="#login-box" class="login-window">Login / Sign In</a>
+	<a href="#login-box" class="login-window">Teacher Login</a>
 
 	<div id="login-box" class="login-popup">
 		<div class="teacher-icon">
 	        <%= image_tag("teacher_icon.png") %>
 		</div>
 		<p class="small-txt">Teacher Login</p>
-		<a href="#" class="close">
-	        <%= image_tag("close_pop.png", class: "btn_close", alt:"X") %>
-	    </a>
+	    <%= image_tag("close_pop.png", class: "close", alt:"X") %>
 	    <%= form_tag("teacher_login", method: "post", class:"signin") do %>
 
 	  <!--<form method="post" class="signin" action="#">-->
 	  	<div id="formholder">
 	        <%= text_field_tag(:username, "Username")%>
-	        <!--<input id="username" name="username" value="" type="text" placeholder="Username">-->
 	        <input id="password" name="password" value="" type="password" placeholder="Password">
 	        <!--<button class="submit button-login" type="button">Sign in</button>-->
 	        <p class="submit rounded orange-text"><%= submit_tag("Sign In") %></p>
@@ -40,7 +37,7 @@
 		$('a.login-window').click(function() {
 		    
 		    //Getting the variable's value from a link 
-		    var loginBox = $(this).attr('href');
+		    var loginBox = $('#login-box')
 
 		    //Fade in the Popup
 		    $(loginBox).fadeIn(300);
@@ -55,19 +52,20 @@
 		    });
 		    
 		    // Add the mask to body
-		    $('body').append('<div id="mask"></div>');
+		    $('.student-background').append('<div id="mask"></div>');
 		    $('#mask').fadeIn(300);
-		    });
-
-		    // When clicking on the button close or the mask layer the popup closed
-		    $('a.close, #mask').live('click', function() { 
-		        console.log("Close here")
-		      $('#mask , .login-popup').fadeOut(300 , function() {
-		        $('#mask').remove();  
-		       }); 
-		      return false;
-		    });
+		    		// When clicking on the button close or the mask layer the popup closed
+			$('.close, #mask').on('click', function() { 
+			        console.log("Close here")
+			      $('#mask , .login-popup').fadeOut(300 , function() {
+			        $('#mask').remove();  
+			       }); 
+			      return false;
+			    });
+			});
 		});
+
+
 </script>
 </div>
 
