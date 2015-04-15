@@ -2,11 +2,11 @@ class LoadData < ActiveRecord::Migration
   def up
     # Create initial users.
     down
-    mg = Student.new(:firstname => "Maggie", :lastname => "Goulder", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
+    mg = Student.new(:firstname => "Maggie", :lastname => "Goulder", :username => "Maggie", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
     mg.save(:validate => false)
-    je = Student.new(:firstname => "Julia", :lastname => "Enthoven", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
+    je = Student.new(:firstname => "Julia", :lastname => "Enthoven", :username => "Julia",:gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
     je.save(:validate => false)
-    mf = Student.new(:firstname => "Megan", :lastname => "Faulk", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
+    mf = Student.new(:firstname => "Megan", :lastname => "Faulk", :username => "Megan",:gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0)
     mf.save(:validate => false)
     
     

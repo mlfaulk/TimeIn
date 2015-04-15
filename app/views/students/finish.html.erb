@@ -1,5 +1,4 @@
-
-
+<div class="student-background">
 	<div id="5.1">
             <!-- Navigation Bar -->
             <!-- Navigation Bar -->
@@ -46,7 +45,7 @@
         <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <p class="desc"><b class="pink-text"><%= @name %></b> went to the recovery chair because he/she <b class="pink-text"><%= @reason %></b>. But now, he/she has recovered from the character mess up! <b class="pink-text"><%= @name %></b> wrote a note here:
+                    <p class="desc"><b class="pink-text"><%= @name %></b> went to the recovery chair because <%= @pronoun %> <b class="pink-text"><%= @reason %></b>. But now, <%= @pronoun %> has recovered from the character mess up! <b class="pink-text"><%= @name %></b> wrote a note here:
                         
                         <p class="prompt border rounded"><%= @text %></p>
                     <p class="desc"> and is now ready to rejoin the class. </p>
@@ -61,4 +60,4 @@
                 </div>
                 <div class="col-md-3"></div>
         </div>
-
+    </div>

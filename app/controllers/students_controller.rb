@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
 			#render action: "login"
 		#end
 
+
 		student = Student.find_by_username(username)
 		if student == nil then
 			#create new student
@@ -28,7 +29,8 @@ class StudentsController < ApplicationController
 				new_visit = Visit.new
 				new_visit.student_id = new_student.id
 				new_visit.date_time = DateTime.now
-				new_visit.reason_num = params[:reason_num]
+				#new_visit.reason_num = params[:reason_num]
+				new_visit.reason_num = 100
 				new_visit.save
 				new_student.current_visit_id = new_visit.id
 				new_student.save
@@ -46,7 +48,6 @@ class StudentsController < ApplicationController
 			new_visit.date_time = DateTime.now
 			new_visit.reason_num = params[:reason_num]
 			new_visit.save
-			#new_visit.reason = 
 			#update visit count
 			visits = student.visit_count
 			student.visit_count = visits + 1
@@ -63,7 +64,7 @@ class StudentsController < ApplicationController
 	def character()
 		student_id = params[:id]
 		student = Student.find(student_id)
-		@name = student.username
+		@name = student.firstname
 	end
 
 	def learn()
@@ -112,10 +113,23 @@ class StudentsController < ApplicationController
 	def finish() 
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
-		@name = student.username
+		@name = student.firstname
+		
+
+		visit_id = student.current_visit_id
+		visit = Visit.find(visit_id)
+		@text = visit.task_text
+
+		gender_num = student.gender
+		if (gender_num == 1) then
+			@pronoun = "she"
+		else 
+			@pronoun = "he"
+		end
+
 		reason_num = student.current_reason_num
 		if (reason_num == 1) then
-			@reason = "spoke when he/she was supposed to be quiet."
+			@reason = "spoke when " + @pronoun + " was supposed to be quiet."
 		end
 		if (reason_num == 2) then 
 			@reason = "used inappropriate language."
@@ -127,9 +141,6 @@ class StudentsController < ApplicationController
 			@reason = "was disruptive to the class."
 		end
 
-		visit_id = student.current_visit_id
-		visit = Visit.find(visit_id)
-		@text = visit.task_text
 
 
 	end
