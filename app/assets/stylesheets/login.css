@@ -44,6 +44,15 @@
     height:auto;
 }
 
+p.login-btn {
+    font-size:1.5em;
+}
+
+.login-btn:hover {
+    background: #ddd;
+
+}
+
 #formholder {
     margin:10%;
 }
@@ -96,7 +105,7 @@ form.signin input::-webkit-input-placeholder {
 }
 
 .button-login:hover {
-    background: #ddd;
+    background: #999;
 }
 
 .small-txt {
