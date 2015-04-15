@@ -1,6 +1,95 @@
-<h3> MY STUDENTS </h3>
-<% for student in @students do %>
-		
-		<%= link_to student.firstname, controller: "teachers", action: "admin_student_profile", id: student.id %>
+<div class="teacher-background">
+<div class="row white-strip">
+        <div class="col-md-1">
+            <p class="center green-text tiny-logo">TimeIn</p>
+        </div>
+        <div class="col-md-10"></div>
+        <div class="col-md-1">
+            <p class="center green-text tiny-logo">Logout</p>
+        </div>
+</div>
 
-<% end %>
+<div class="row">
+    <!-- Student List -->
+    <div class="col-md-4 outline">
+        <div class="row tiny-filler"></div>
+        <div class="row">
+            <div class="col-md-3 pull-center">
+                 <%= image_tag("students.png", class: "icon purple") %>
+            </div>
+            <div class="col-md-8 pull-center left-align">
+                <p class="student-title">My Students</p>
+            </div>
+        </div>
+
+        <div class="row tiny-filler"></div>
+        <div class="row search-bar blue">
+            <div class="col-md-2 pull-center">
+                <%= image_tag("Path.png") %>
+            </div>
+            <div class="col-md-10 pull-center"></div>
+        </div>
+        
+        <% for student in @students do %>
+            <div class="row border grey">
+                <div class="col-md-3 pull-center">
+                    <%= image_tag("face.png", class: "icon-small orange") %>
+                </div>
+                <div class="col-md-8 pull-center left-align">
+                    <p class="student-name">
+                        <%= link_to student.firstname, controller: "teachers", action: "admin_student_profile", id: student.id %>
+                    </p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>    
+        <% end %>
+    </div>
+
+    <!-- Updates Page -->
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <%= image_tag("graphic.png", class: "") %>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <%= image_tag("alert.png", class: "icon orange center") %>
+            </div>
+            <div class="col-md-10">
+                <p class="student-title">Updates</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row small-filler"></div>
+        <div class="row">
+            <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="block rounded white">
+                            <p class="update-title">Friday: 10:00am</p>
+                            <p class="update-desc">Johny hit Sally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+        </div>
+        <div class="row small-filler"></div>
+        <div class="row">
+            <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="block rounded white">
+                            <p class="update-title">Thursday: 3:00pm</p>
+                            <p class="update-desc">Johny hit Jose.</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+    </div> 
