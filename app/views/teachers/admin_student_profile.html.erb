@@ -1,9 +1,21 @@
-<h3> <%= @student.firstname %> <%= @student.lastname %> </h3>
+<div class="teacher-background">
+    <div class="row white-strip">
+            <div class="col-md-1">
+                <p class="center green-text tiny-logo">TimeIn</p>
+            </div>
+            <div class="col-md-10"></div>
+            <div class="col-md-1">
+                <p class="center green-text tiny-logo">Logout</p>
+            </div>
+    </div>
+    
+    <h3> <%= @student.firstname %> <%= @student.lastname %> </h3>
 
-<h3> TIME-INS </h3>
-<% for timein in @visits do %>
+    <h3> TIME-INS </h3>
+    <% for timein in @visits do %>
 
-<%= link_to timein.date_time, controller: "teachers", action: "admin_incident_detail", id: timein.id %>
+    <%= link_to timein.date_time, controller: "teachers", action: "admin_incident_detail", id: timein.id %>
 
-<% end %>
+    <% end %>
+</div>
 

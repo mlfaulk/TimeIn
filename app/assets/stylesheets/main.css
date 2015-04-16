@@ -37,7 +37,13 @@
 }
 
 .teacher-background {
-    background-color: rgb(230,230,230);   
+    background-image: url(grey-chalk.jpg);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;   
 }
 
 .icon {
@@ -227,26 +233,32 @@
 
 .student-title {
     font-size: 40px;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Poiret One', cursive;
     font-weight: bold; 
 }
 
 .student-name {
     font-size: 22px;
     font-family: 'Oxygen';
+    font-family: 'Poiret One', cursive;
     font-weight: bold; 
     vertical-align: middle;
 }
 
 .update-title {
-    font-size: 19px;
-    font-family: 'Oxygen';
-    font-weight: bold; 
+    font-size: 20px;
+    ##font-family: 'Oxygen';
+    ##font-family: 'Nunito', sans-serif;
+    ##font-family: 'News Cycle', sans-serif;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder; 
 }
 
 .update-desc {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Oxygen';
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
 }
 
 .circular {
