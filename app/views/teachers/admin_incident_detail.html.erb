@@ -4,7 +4,8 @@
                 <%= image_tag("arrow-left.png", class: "arrow-small") %>
             </div>
             <div class="col-md-3">
-                <p class="green-text tiny-logo-left">Julia Enthoven</p>
+                <p class="green-text tiny-logo-left"> <%= link_to @student.firstname, action: "admin_student_profile", id: @incident.student_id %></p>
+                </p>
             </div>
             <div class="col-md-7"></div>
             <div class="col-md-1">

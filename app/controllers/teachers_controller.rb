@@ -14,6 +14,7 @@ class TeachersController < ApplicationController
 	def admin_incident_detail()
 		id = params[:id]
 		@incident = Visit.find(id)
+		@student = Student.find(@incident.student_id)
 
 		reason_num = @incident.reason_num
 		if (reason_num == "1") then
