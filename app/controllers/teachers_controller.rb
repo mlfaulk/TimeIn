@@ -40,6 +40,10 @@ class TeachersController < ApplicationController
 			@action = "Completed a freewrite"
 		end
 
+		date_time = @incident.date_time
+		@time = date_time.strftime("%A, %b %d, %H:%M")
+
+
 
 		@response = @incident.task_text
 	end

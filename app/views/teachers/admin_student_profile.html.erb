@@ -11,10 +11,11 @@
     
     <h3> <%= @student.firstname %> <%= @student.lastname %> </h3>
 
+
     <h3> TIME-INS </h3>
     <% for timein in @visits do %>
 
-    <%= link_to timein.date_time, controller: "teachers", action: "admin_incident_detail", id: timein.id %>
+    <%= link_to timein.date_time.strftime("%A, %b %d, %H:%M"), controller: "teachers", action: "admin_incident_detail", id: timein.id %>
 
     <% end %>
 </div>

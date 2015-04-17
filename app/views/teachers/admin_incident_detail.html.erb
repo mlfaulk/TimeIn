@@ -1,4 +1,15 @@
-<h3> TimeIn, <%= @incident.date_time %> </h3> 
-<h2>Incident: <%= @reason %> </h2>
-<h2>Action: <%= @action %> </h2>
-<h2>Response: <%= @response %> </h2>
+<div class="teacher-background">
+    <div class="row white-strip">
+            <div class="col-md-1">
+                <p class="center green-text tiny-logo">TimeIn</p>
+            </div>
+            <div class="col-md-10"></div>
+            <div class="col-md-1">
+                <p class="center green-text tiny-logo">Logout</p>
+            </div>
+    </div>
+	<h3> TimeIn, <%= @time %>  </h3> 
+	<h2>Incident: <%= @reason %> </h2>
+	<h2>Action: <%= @action %> </h2>
+	<h2>Response: <%= @response %> </h2>
+</div>
