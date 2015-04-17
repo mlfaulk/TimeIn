@@ -9,13 +9,62 @@
             </div>
     </div>
     
-    <h3> <%= @student.firstname %> <%= @student.lastname %> </h3>
+    <div class="row filler-small"></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+             <%= image_tag("profile.jpg", class: "icon-face") %>
+        </div>
+        <div class="col-md-7">
+            <div class="row filler-small"></div>
+            <p class="student-title shift-slight-right"><%= @student.firstname %> <%= @student.lastname %></p>
+            <p class="student-desc shift-slight-right">Julia is in 5th grade. She has a long history of aggresive behavior at SFCA. She lives in a single parent household with three brothers in the Tenderloin.</p>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="row filler"></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <p class="student-title">Recent TimeIns</p>
+            <% for timein in @visits do %>
 
-    <h3> TIME-INS </h3>
-    <% for timein in @visits do %>
+            <%= link_to timein.date_time, controller: "teachers", action: "admin_incident_detail", id: timein.id %>
 
-    <%= link_to timein.date_time, controller: "teachers", action: "admin_incident_detail", id: timein.id %>
+            <% end %>
+            
+            <div class="row">
+            <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="block rounded white">
+                            <p class="update-title">Thursday: 2:00pm</p>
+                            <p class="update-desc">Julia hit Sally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row small-filler"></div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="block rounded white">
+                            <p class="update-title">Thursday: 4:00pm</p>
+                            <p class="update-desc">Julia purposefully broke John's pencil</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="col-md-5">
+             <%= image_tag("graphic.png", class: "") %>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    
 
-    <% end %>
 </div>
 
