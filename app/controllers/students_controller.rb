@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
 	def post_login()
 		username = params[:username]
 
+
 		#if (username == "") then
 			#@invalid_username = true
 			#return to login page
@@ -140,6 +141,8 @@ class StudentsController < ApplicationController
 		if (reason_num == 4) then
 			@reason = "was disruptive to the class."
 		end
+		ModelMailer.new_record_notification(@name).deliver
+
 
 
 
