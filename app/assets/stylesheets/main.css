@@ -12,7 +12,8 @@
 .orange { background-color: rgba(227, 138, 120, 1);}
 .yellow { background-color: rgba(222, 207, 93, 1);}
 .grey { background-color: rgba(250, 250, 250, .8);}
-.white { background-color: rgba(250, 250, 250, 1.0); }
+.white { background-color: rgba(250, 250, 250, 1.0);}
+.line-color { background-color: rgba(3, 3, 3, .3);}
 
 .palegreen-text { color: palegreen;}
 .green-text { color: rgba(179, 214, 167, 1);}
@@ -91,6 +92,32 @@
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
+.icon-face {
+/*    display: bloc;
+    margin: auto;*/
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.vl {
+    border-right: solid;
+    border-width: 2px;
+    padding-right: 60px;
+    height: 25px;
+    border-color: black;
+}
+
+
+.center-text {
+    text-align: center;
+}
+
 .rounded {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
@@ -120,6 +147,12 @@
     font-family: 'Unkempt', cursive;
     font-size: 20px; 
     text-align: center;
+    padding-top: 5px;
+}
+
+.tiny-logo-left {
+    font-family: 'Unkempt', cursive;
+    font-size: 20px;
     padding-top: 5px;
 }
 
@@ -198,6 +231,22 @@
     border-right-color: rgba(3, 3, 3, .3);;
 }
 
+.outline-lower {
+    border-style: solid;
+    border-top-color: rgba(0, 0, 0, .0);
+    border-right-color: rgba(0, 0, 0, .0);
+    border-left-color: rgba(0, 0, 0, .0);
+    border-bottom-color: rgba(3, 3, 3, .3);;
+}
+
+.outline-upper {
+    border-style: solid;
+    border-bottom-color: rgba(0, 0, 0, .0);
+    border-right-color: rgba(0, 0, 0, .0);
+    border-left-color: rgba(0, 0, 0, .0);
+    border-top-color: rgba(3, 3, 3, .3);;
+}
+
 .block {
     padding: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
@@ -237,12 +286,34 @@
     font-weight: bold; 
 }
 
+.student-title-small {
+    font-size: 24px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold; 
+}
+
 .student-name {
     font-size: 22px;
     font-family: 'Oxygen';
     font-family: 'Poiret One', cursive;
     font-weight: bold; 
     vertical-align: middle;
+}
+
+.student-desc {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.student-desc-big {
+    font-size: 18px;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.shift-slight-right {
+    padding-left: 10px;   
 }
 
 .update-title {
@@ -335,6 +406,10 @@ textarea {
 
 .filler-small {
     height: 30px;
+}
+
+.filler-tiny {
+    height: 15px;
 }
 
 a:hover {
@@ -480,6 +555,12 @@ img.arrow:hover {
     height: 50%;
     margin-top: 20%;
     
+}
+
+.arrow-small {
+    margin-top: 5px;
+    height: 30px;
+    margin-left: 40px;
 }
 
 .arrow-scroll {

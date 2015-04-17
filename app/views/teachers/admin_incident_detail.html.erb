@@ -1,15 +1,132 @@
 <div class="teacher-background">
     <div class="row white-strip">
             <div class="col-md-1">
-                <p class="center green-text tiny-logo">TimeIn</p>
+                <%= image_tag("arrow-left.png", class: "arrow-small") %>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-md-3">
+                <p class="green-text tiny-logo-left">Julia Enthoven</p>
+            </div>
+            <div class="col-md-7"></div>
             <div class="col-md-1">
                 <p class="center green-text tiny-logo">Logout</p>
             </div>
     </div>
-	<h3> TimeIn, <%= @time %>  </h3> 
-	<h2>Incident: <%= @reason %> </h2>
-	<h2>Action: <%= @action %> </h2>
-	<h2>Response: <%= @response %> </h2>
+    <div class="row filler-small"></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <p class="student-title"> TimeIn, <%= @incident.date_time.to_formatted_s(:long)  %> </p>
+            <div class="row">
+                <div class="col-md-1 center-text vl"><p class="student-desc"><%= @incident.date_time.time.to_s(:time) %>&nbsp; </p></div>
+                <div class="col-md-3 center-text"><p class="student-desc">Duration: 5min 30s</p></div>
+                <div class="col-md-8"></div>
+            </div>
+            
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row filler-tiny"></div>
+    <div class="row filler-small outline-upper"></div>
+    <div class="row">
+    
+        <div class="col-md-2"></div>
+        <div class="col-md-9">
+            <p class="student-title-small blue-text inline">Incident: <p class="student-desc inline"><%= @reason %></p></p>
+            <p class="student-title-small  orange-text inline">Action: <p class="student-desc inline"> <%= @action %> </p></p>
+            <p class="student-title-small darkpink-text inline">Response: <p class="student-desc inline"> <%= @response %></p></p>
+        </div>
+        <div class="col-md-1"></div>
+    
+    </div>
+    <div class="row filler-tiny"></div>
+    <div class="row filler-small outline-upper"></div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><p class="student-title-small">Teacher Notes</p></div>
+        <div class="col-md-8">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-1 pull-center"><%= image_tag("face.png", class: "icon-small orange inline") %></div>
+                <div class="col-md-10 pull-center">
+                    <p class="student-desc-big">Vanessa: Fight between Marcus and Stephany during Math.</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row filler-tiny"></div>
+            <div class="row">
+                <div class="col-md-1 pull-center"><%= image_tag("face.png", class: "icon-small orange inline") %></div>
+                <div class="col-md-10 pull-center">
+                    <p class="student-desc-big">Jodi: We sohuld keep an eye on this. This has been a recurring incident.</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="row filler-tiny"></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <p class="student-desc-big blue-text">Add Note</p>
+        </div>
+        <div class="col-md-8">
+        </div>
+    </div>
+    <div class="row filler-tiny"></div>
+    <div class="row filler-small outline-upper"></div>
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <p class="student-title-small center-text">This Week</p>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="block rounded white">
+                                <p class="update-title">Wed, Jan 30 | 3:00pm</p>
+                                <p class="update-desc">I was disrespectful to a teacher.</p>
+                    </div>
+                    <div class="row small-filler"></div>
+                    <div class="block rounded white">
+                                <p class="update-title">Mon, Jan 28 | 4:00pm</p>
+                                <p class="update-desc">I did something mean to a classmate.</p>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p class="student-title-small center-text">Related</p>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="block rounded white">
+                                <p class="update-title">Fri, Jan 22 | 2:00pm</p>
+                                <p class="update-desc">I talked when I supposed to be quiet.</p>
+                    </div>
+                    <div class="row small-filler"></div>
+                    <div class="block rounded white">
+                                <p class="update-title">Thur, Dec 10 | 3:43pm</p>
+                                <p class="update-desc">I talked when I suppoed to be quiet.</p>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+
+
+
+
+
+
+    </div>
 </div>
