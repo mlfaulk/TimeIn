@@ -8,6 +8,8 @@ class TeachersController < ApplicationController
 
 	def admin_dashboard()
 		@students = Student.all
+		visits = Visit.all
+		@updates = Visit.order("created_at").limit(5)
 		
 	end
 

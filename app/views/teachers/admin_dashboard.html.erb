@@ -64,31 +64,23 @@
             <div class="col-md-1"></div>
         </div>
         <div class="row small-filler"></div>
-        <div class="row">
-            <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="block rounded white">
-                            <p class="update-title">Friday: 10:00am</p>
-                            <p class="update-desc">Johny hit Sally.</p>
-                        </div>
-                    </div>
-                </div>
+        <% for update in @updates do %>
+            <div class="row">
                 <div class="col-md-1"></div>
-        </div>
-        <div class="row small-filler"></div>
-        <div class="row">
-            <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="row">
                         <div class="block rounded white">
-                            <p class="update-title">Thursday: 3:00pm</p>
-                            <p class="update-desc">Johny hit Jose.</p>
+                                <p class="update-title">
+                                        <%= link_to update.date_time.strftime("%A, %b %d, %H:%M"), controller: "teachers", action: "admin_incident_detail", id: update.id %></p>
+                                <p class="update-desc">update.reason</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <div class="col-md-1"></div>
-        </div>
+                    <div class="col-md-1"></div>
+            </div>
+            <div class="row small-filler"></div>
+        <% end %>
+
     </div>
 </div>
 
