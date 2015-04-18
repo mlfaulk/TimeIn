@@ -26,6 +26,16 @@
 .orange-text { color: rgba(227, 138, 120, 1);}
 .yellow-text { color: rgba(222, 207, 93, 1);}
 
+body {
+    background-image: url(black-chalk.jpg);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;   
+}
+
 .student-background {
     height: 100vh;
     background-image: url(black-chalk.jpg);
