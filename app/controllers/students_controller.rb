@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
 				#create new visit
 				new_visit = Visit.new
 				new_visit.student_id = new_student.id
-				new_visit.date_time = Time.zone.now
+				new_visit.date_time = Time.now
 				#new_visit.reason_num = params[:reason_num]
 				new_visit.reason_num = 100
 				new_visit.save
@@ -47,6 +47,7 @@ class StudentsController < ApplicationController
 			new_visit = Visit.new
 			new_visit.student_id = student.id
 			new_visit.date_time = Time.now
+			new_visit.end_time=-1
 			new_visit.reason_num = params[:reason_num]
 			new_visit.save
 			#update visit count
@@ -119,6 +120,9 @@ class StudentsController < ApplicationController
 
 		visit_id = student.current_visit_id
 		visit = Visit.find(visit_id)
+		visit.end_time = Time.now
+		visit.save
+
 		@text = visit.task_text
 
 		gender_num = student.gender

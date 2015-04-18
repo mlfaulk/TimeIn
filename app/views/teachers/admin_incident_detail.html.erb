@@ -16,11 +16,10 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-7">
-            <p class="student-title"> TimeIn, <%= @incident.date_time.to_formatted_s(:long)  %> </p>
+            <p class="student-title"> TimeIn: <%= @incident.date_time.strftime("%A, %b %d, %l:%M") %> </p>
             <div class="row">
-                <div class="col-md-1 center-text vl"><p class="student-desc"><%= @incident.date_time.time.to_s(:time) %>&nbsp; </p></div>
-                <div class="col-md-3 center-text"><p class="student-desc">Duration: 5min 30s</p></div>
-                <div class="col-md-8"></div>
+                <div class="col-md-6 center-text"><p class="student-desc">Duration: <%= @duration %></p></div>
+                <div class="col-md-6"></div>
             </div>
             
         </div>

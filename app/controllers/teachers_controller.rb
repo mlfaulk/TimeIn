@@ -13,6 +13,8 @@ class TeachersController < ApplicationController
 		
 	end
 
+  include ActionView::Helpers::DateHelper
+
 	def admin_incident_detail()
 		id = params[:id]
 		@incident = Visit.find(id)
@@ -45,8 +47,16 @@ class TeachersController < ApplicationController
 
 		date_time = @incident.date_time
 		@time = date_time.strftime("%A, %b %d, %H:%M")
+		diff = (@incident.end_time - date_time)
 
+		##seconds = (@incident.end_time.seconds-date_time.seconds)
+		##mins = (@incident.end_time.min-date_time.seconds)
 
+		@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
+
+		##if (seconds<0) then
+		##	seconds = seconds + 60
+		##end 
 
 		@response = @incident.task_text
 	end
