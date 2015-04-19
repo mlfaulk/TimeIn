@@ -36,7 +36,7 @@
                             <div class="block rounded white">
                                 <p class="update-title">
                                         <%= link_to timein.date_time.strftime("%A, %b %d, %l:%M"), controller: "teachers", action: "admin_incident_detail", id: timein.id %></p>
-                                <p class="update-desc"><%= @reason %></p>
+                                <p class="update-desc"> <%= timein.reason_str %></p>
                             </div>
                         </div>
                     </div>

@@ -72,7 +72,7 @@
                         <div class="block rounded white">
                                 <p class="update-title">
                                         <%= link_to update.date_time.strftime("%A, %b %d, %l:%M"), controller: "teachers", action: "admin_incident_detail", id: update.id %></p>
-                                <p class="update-desc">update.reason</p>
+                                <p class="update-desc"><%= update.reason_str %></p>
                             </div>
                         </div>
                     </div>

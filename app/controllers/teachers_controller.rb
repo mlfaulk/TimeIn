@@ -9,7 +9,7 @@ class TeachersController < ApplicationController
 	def admin_dashboard()
 		@students = Student.all
 		visits = Visit.all
-		@updates = Visit.order("created_at").limit(5)
+		@updates = Visit.order("created_at").reverse_order.limit(5)
 		
 	end
 
@@ -21,28 +21,25 @@ class TeachersController < ApplicationController
 		@student = Student.find(@incident.student_id)
 
 		reason_num = @incident.reason_num
-		if (reason_num == "1") then
-			@reason = "Spoke when he/she was supposed to be quiet."
-		end
-		if (reason_num == "2") then 
-			@reason = "Used inappropriate language."
-		end
-		if (reason_num == "3") then
-			@reason = "Was mean to a classmate."
-		end
-		if (reason_num == "4") then
-			@reason = "Was disruptive to the class."
-		end
 
 		task = @incident.task_choice
 		if (task == "promise") then
 			@action = "Made a promise"
-		end
-		if (task == "teacher") then 
+		elsif (task == "teacher") then 
 			@action = "Wrote a note to teacher"
-		end
-		if (task == "freewrite") then
+		elsif (task == "freewrite") then
 			@action = "Completed a freewrite"
+		end
+
+		@reason = "[No Description]"
+		if (reason_num == "1") then
+			@reason = "Spoke when he/she was supposed to be quiet."
+		elsif (reason_num == "2") then 
+			@reason = "Used inappropriate language."
+		elsif (reason_num == "3") then
+			@reason = "Was mean to a classmate."
+		elsif (reason_num == "4") then
+			@reason = "Was disruptive to the class."
 		end
 
 		date_time = @incident.date_time
@@ -59,6 +56,10 @@ class TeachersController < ApplicationController
 		##end 
 
 		@response = @incident.task_text
+		@relateds_student = Visit.where(student_id:@student.id).last(3)
+		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id)
+
+
 	end
 
 end

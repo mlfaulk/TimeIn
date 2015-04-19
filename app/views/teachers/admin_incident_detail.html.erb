@@ -90,15 +90,13 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
+                    <% for related in @relateds_student do %>
                     <div class="block rounded white">
-                                <p class="update-title">Wed, Jan 30 | 3:00pm</p>
-                                <p class="update-desc">I was disrespectful to a teacher.</p>
+                                <p class="update-title"> <%= link_to related.date_time.strftime("%A, %b %d | %l:%M"), controller: "teachers", action: "admin_incident_detail", id: related.id %></p>
+                                <p class="update-desc"><%= related.reason_num %></p>
                     </div>
                     <div class="row small-filler"></div>
-                    <div class="block rounded white">
-                                <p class="update-title">Mon, Jan 28 | 4:00pm</p>
-                                <p class="update-desc">I did something mean to a classmate.</p>
-                    </div>
+                    <% end %>
                 </div>
                 <div class="col-md-1"></div>
             </div>
@@ -108,15 +106,13 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
+                    <% for related in @relateds_incident do %>
                     <div class="block rounded white">
-                                <p class="update-title">Fri, Jan 22 | 2:00pm</p>
-                                <p class="update-desc">I talked when I supposed to be quiet.</p>
+                                <p class="update-title"> <%= link_to related.date_time.strftime("%A, %b %d | %l:%M"), controller: "teachers", action: "admin_incident_detail", id: related.id %></p>
+                                <p class="update-desc"><%= related.reason_num %></p>
                     </div>
                     <div class="row small-filler"></div>
-                    <div class="block rounded white">
-                                <p class="update-title">Thur, Dec 10 | 3:43pm</p>
-                                <p class="update-desc">I talked when I suppoed to be quiet.</p>
-                    </div>
+                    <% end %>
                 </div>
                 <div class="col-md-1"></div>
             </div>
