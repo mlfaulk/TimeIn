@@ -5,15 +5,19 @@ class TeachersController < ApplicationController
 		@visits = @student.visits
 
 	end
-
+	include ActionView::Helpers::DateHelper
 	def admin_dashboard()
 		@students = Student.all
 		visits = Visit.all
 		@updates = Visit.order("created_at").reverse_order.limit(5)
+
+		@num_lastweek = Visit.where(created_at: (1.week.ago)..Time.now).count
+		@num_twoweeksago = Visit.where(created_at: (2.week.ago)..(1.week.ago)).count
+
+
 		
 	end
 
-  include ActionView::Helpers::DateHelper
 
 	def admin_incident_detail()
 		id = params[:id]
