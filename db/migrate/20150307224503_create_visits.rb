@@ -4,7 +4,6 @@ class CreateVisits < ActiveRecord::Migration
     	t.integer	:student_id
     	t.datetime	:date_time
       t.datetime  :end_time
-      t.text    :reason_str
     	t.string	:reason_num     # Matches with order of options in dropdown menu.
                                 # For example, 1="Spoke when he/she was supposed to be quiet."
     	t.string	:task_choice    # either "teacher", "freewrite", or "promise"
