@@ -50,7 +50,9 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <%= image_tag("graphic.png", class: "") %>
+                <div id="placeholder" data-var=<%= @dataarr %> style="width:600px;height:300px">  </div>
+
+
                  <p> Number of visits this week: <%= @num_lastweek %></p>
                  <p> Number of visits in the previous week: <%= @num_twoweeksago %></p>
 
@@ -87,4 +89,25 @@
     </div>
 </div>
 
+
     </div> 
+    
+    <script>
+    function barplot(flotdata) {
+        var data = flotdata
+        console.log(data)
+        $.plot($("#placeholder"), [
+        {
+            data: <%= @dataarr %>,
+            bars: {
+                show: true
+            }
+        }]);   
+    }
+
+    $( document ).ready(function() {
+        console.log("Doc is ready");
+        barplot();
+    });
+
+    </script>

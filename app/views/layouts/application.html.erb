@@ -77,22 +77,6 @@
       }
     });
 
-   /* function classify($item, $box) {
-      $item.fadeOut(function() {
-        var $list = $( "ul", $box ).length ?
-          $( "ul", $box ) :
-          $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $box );
- 
-        $item.find( "a.ui-icon-trash" ).remove();
-        $item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
-          $item
-            .animate({ width: "5%" })
-            .find( "img" )
-              .animate({ height: "5%" });
-        });
-      });
-    }*/
-
     function addon($item, $box) {
         $item.appendTo( $box ).fadeIn(function() {
           $item
@@ -126,9 +110,6 @@
     function unclassify( $item ) {
       $item.fadeOut(function() {
         $item
-          //.find( "img" )
-            //.css({"height": "96px", "width":"96px"})
-          //.end()
           .appendTo( $gallery )
           .fadeIn();
         $item.animate({ width: "15%" })
@@ -136,19 +117,6 @@
       });
     }
  
-    // resolve the icons behavior with event delegation
-    /*$( "ul.gallery > li" ).click(function( event ) {
-      var $item = $( this ),
-        $target = $( event.target );
- 
-      if ( $target.is( "a.ui-icon-trash" ) ) {
-        classify( $item );
-      } else if ( $target.is( "a.ui-icon-refresh" ) ) {
-        recycleImage( $item );
-      }
- 
-      return false;
-    });*/
   });
   </script>
 
