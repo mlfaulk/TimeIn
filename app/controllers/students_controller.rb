@@ -2,12 +2,22 @@ class StudentsController < ApplicationController
 	def start()
 	end
 
-	def login()
 
+	def login()
+		students = Student.all 
+        @namesArray = [] 
+        count = 0 
+        for student in students do 
+          	@namesArray[count] = [student.firstname + " " + student.lastname, student.firstname]
+            count = count + 1
+        end
 	end
 
+
+
+
 	def post_login()
-		username = params[:username]
+		firstname = params[:student_name]
 
 		#if (username == "") then
 			#@invalid_username = true
@@ -16,7 +26,7 @@ class StudentsController < ApplicationController
 		#end
 
 
-		student = Student.find_by_username(username)
+		student = Student.find_by_firstname(firstname)
 		if student == nil then
 			#create new student
 			new_student = Student.new
