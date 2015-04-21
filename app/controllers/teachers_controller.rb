@@ -11,9 +11,15 @@ class TeachersController < ApplicationController
 		visits = Visit.all
 		@updates = Visit.order("created_at").reverse_order.limit(5)
 
+
 		@num_lastweek = Visit.where(created_at: (1.week.ago)..Time.now).count
 		@num_twoweeksago = Visit.where(created_at: (2.week.ago)..(1.week.ago)).count
 
+		lastweek_collection = {:color => "palegreen", :label => "This week", :data => [1,@num_lastweek]}
+		twoweeks_collection = {color: "lightpink", label: "Previous week", data: [2, @num_twoweeksago]}
+		@dataarr = Array.new
+		@dataarr.push lastweek_collection
+		@dataarr.push twoweeks_collection
 
 		
 	end
@@ -60,8 +66,8 @@ class TeachersController < ApplicationController
 		##end 
 
 		@response = @incident.task_text
-		@relateds_student = Visit.where(student_id:@student.id).last(3)
-		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id)
+		@relateds_student = Visit.where(student_id:@student.id).where.not(id:id).last(3)
+		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id).where.not(id:id)
 
 
 	end

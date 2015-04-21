@@ -23,7 +23,6 @@ class StudentsController < ApplicationController
 			new_student.username = username
 			new_student.visit_count = 1
 			new_student.current_reason_num = params[:reason_num]
-			new_student.current_reason_num = params[:reason_str]
 
 			if new_student.save then
 				session[:current_user_id] = new_student.id
