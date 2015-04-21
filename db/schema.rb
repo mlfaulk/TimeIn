@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150412005546) do
   create_table "visits", force: true do |t|
     t.integer  "student_id"
     t.datetime "date_time"
+    t.datetime "end_time"
     t.string   "reason_num"
     t.string   "task_choice"
     t.text     "task_text"

@@ -30,9 +30,7 @@ class StudentsController < ApplicationController
 				new_visit = Visit.new
 				new_visit.student_id = new_student.id
 				new_visit.date_time = Time.now
-				#new_visit.reason_num = params[:reason_num]
-				new_visit.reason_num = 100
-				new_visit.reason_str="[No Description]"
+				new_visit.reason_num = params[:reason_num]
 				new_visit.save
 				new_student.current_visit_id = new_visit.id
 				new_student.save
@@ -50,20 +48,6 @@ class StudentsController < ApplicationController
 			new_visit.date_time = Time.now
 			new_visit.end_time=-1
 			new_visit.reason_num = params[:reason_num]
-			new_visit.reason_str = params[:reason_str]
-
-			reason_num = new_visit.reason_num
-			if (reason_num == 1) then
-				@reason = "spoke when " + @pronoun + " was supposed to be quiet."
-			elsif (reason_num == 2) then 
-				@reason = "used inappropriate language."
-			
-			elsif (reason_num == 3) then
-				@reason = "was mean to a classmate."
-			elsif (reason_num == 4) then
-				@reason = "was disruptive to the class."
-			end
-			new_visit.reason_str = @reason
 			new_visit.save
 			#update visit count
 			visits = student.visit_count
@@ -147,12 +131,22 @@ class StudentsController < ApplicationController
 			@pronoun = "he"
 		end
 
+		reason_num = visit.reason_num.to_i
+		if (reason_num == 1) then
+			@reason = "spoke when " + @pronoun + " was supposed to be quiet."
+		elsif (reason_num == 2) then 
+			@reason = "used inappropriate language."
+			
+		elsif (reason_num == 3) then
+			@reason = "was mean to a classmate."
+		elsif (reason_num == 4) then
+			@reason = "was disruptive to the class."
+		end
+
+
 		reason_num = student.current_reason_num
 
 		ModelMailer.new_record_notification(@name).deliver
-
-
-
 
 	end
 
