@@ -19,13 +19,6 @@ class StudentsController < ApplicationController
 	def post_login()
 		firstname = params[:student_name]
 
-		#if (username == "") then
-			#@invalid_username = true
-			#return to login page
-			#render action: "login"
-		#end
-
-
 		student = Student.find_by_firstname(firstname)
 		if student == nil then
 			#create new student
@@ -123,38 +116,18 @@ class StudentsController < ApplicationController
 
 	def finish() 
 		student_id = session[:current_user_id]
-		student = Student.find(student_id)
-		@name = student.firstname
+		@student = Student.find(student_id)
+		@name = @student.firstname
 		
 
-		visit_id = student.current_visit_id
-		visit = Visit.find(visit_id)
-		visit.end_time = Time.now
-		visit.save
+		visit_id = @student.current_visit_id
+		@visit = Visit.find(visit_id)
+		@visit.end_time = Time.now
+		@visit.save
 
-		@text = visit.task_text
+		@text = @visit.task_text
 
-		gender_num = student.gender
-		if (gender_num == 1) then
-			@pronoun = "she"
-		else 
-			@pronoun = "he"
-		end
-
-		reason_num = visit.reason_num.to_i
-		if (reason_num == 1) then
-			@reason = "spoke when " + @pronoun + " was supposed to be quiet."
-		elsif (reason_num == 2) then 
-			@reason = "used inappropriate language."
-			
-		elsif (reason_num == 3) then
-			@reason = "was mean to a classmate."
-		elsif (reason_num == 4) then
-			@reason = "was disruptive to the class."
-		end
-
-
-		reason_num = student.current_reason_num
+		reason_num = @student.current_reason_num
 
 		ModelMailer.new_record_notification(@name).deliver
 
@@ -164,11 +137,5 @@ class StudentsController < ApplicationController
 		reset_session
 		redirect_to action: "start"
 	end
-
-
-	
-
-
-
 
 end

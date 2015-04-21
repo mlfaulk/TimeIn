@@ -43,28 +43,6 @@ class TeachersController < ApplicationController
 		@incident = Visit.find(id)
 		@student = Student.find(@incident.student_id)
 
-		reason_num = @incident.reason_num
-
-		task = @incident.task_choice
-		if (task == "promise") then
-			@action = "Made a promise"
-		elsif (task == "teacher") then 
-			@action = "Wrote a note to teacher"
-		elsif (task == "freewrite") then
-			@action = "Completed a freewrite"
-		end
-
-		@reason = "[No Description]"
-		if (reason_num == "1") then
-			@reason = "Spoke when he/she was supposed to be quiet."
-		elsif (reason_num == "2") then 
-			@reason = "Used inappropriate language."
-		elsif (reason_num == "3") then
-			@reason = "Was mean to a classmate."
-		elsif (reason_num == "4") then
-			@reason = "Was disruptive to the class."
-		end
-
 		date_time = @incident.date_time
 		@time = date_time.strftime("%A, %b %d, %H:%M")
 		diff = (@incident.end_time - date_time)
@@ -78,7 +56,6 @@ class TeachersController < ApplicationController
 		##	seconds = seconds + 60
 		##end 
 
-		@response = @incident.task_text
 		@relateds_student = Visit.where(student_id:@student.id).last(3)
 		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id)
 
