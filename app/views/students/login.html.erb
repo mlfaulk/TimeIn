@@ -46,7 +46,11 @@
                 
 
                 <%= form_tag("post_login", method: "post") do %>
-                    <p class="prompt center"><b>Hello, my name is </b><font color="black"><%= text_field_tag(:username)%></font></p>
+                    <p class="prompt center"><b>Hello, my name is </b><font color="black">
+
+                        <%= select_tag(:student_name, options_for_select(@namesArray))%>
+
+                    </font></p>
                     <p class="prompt-black inline"><b class="prompt">I am here because</b>
 
                     <%= select_tag(:reason_num, options_for_select([['I spoke when I was supposed to be quiet.', 1], ['I used inappropriate language.', 2], ['I was mean to a classmate.', 3], ['I was disruptive to the class.', 4]]))%></p><br>

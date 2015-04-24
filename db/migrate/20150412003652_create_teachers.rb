@@ -4,6 +4,7 @@ class CreateTeachers < ActiveRecord::Migration
     	t.string	:username
     	t.string 	:firstname
     	t.string	:lastname
+      t.string  :password
     	#password
     	#photo
       t.timestamps
