@@ -31,9 +31,9 @@
     
         <div class="col-md-2"></div>
         <div class="col-md-9">
-            <p class="student-title-small blue-text inline">Incident: <p class="student-desc inline"><%= @reason %></p></p>
-            <p class="student-title-small  orange-text inline">Action: <p class="student-desc inline"> <%= @action %> </p></p>
-            <p class="student-title-small darkpink-text inline">Response: <p class="student-desc inline"> <%= @response %></p></p>
+            <p class="student-title-small blue-text inline">Incident: <p class="student-desc inline"><%= @incident.get_reason() %></p></p>
+            <p class="student-title-small  orange-text inline">Action: <p class="student-desc inline"> <%= @incident.get_action() %> </p></p>
+            <p class="student-title-small darkpink-text inline">Response: <p class="student-desc inline"> <%= @incident.task_text %></p></p>
         </div>
         <div class="col-md-1"></div>
     

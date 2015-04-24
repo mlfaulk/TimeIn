@@ -19,12 +19,15 @@
 		</div>
 		<p class="small-txt">Teacher Login</p>
 	    <%= image_tag("close_pop.png", class: "close", alt:"X") %>
-	    <%= form_tag("teacher_login", method: "post", class:"signin") do %>
+	    <%= form_tag(controller: "teachers", action: "post_teacher_login", method: "post") do %>
 
-	  <!--<form method="post" class="signin" action="#">-->
+	  
 	  	<div id="formholder">
-	        <%= text_field_tag(:username, "Username")%>
-	        <input id="password" name="password" value="" type="password" placeholder="Password">
+	  		<%= label_tag 'Username:' %>
+	        <%= text_field_tag(:username)%><br>
+	        <%= label_tag 'Password:' %>
+	        <%= password_field_tag(:password) %>
+	        
 	        <!--<button class="submit button-login" type="button">Sign in</button>-->
 	        <p class="submit rounded orange-text"><%= submit_tag("Sign In") %></p>
 
@@ -34,7 +37,7 @@
 	    </div>
 	    <% end %>
 
-	  <!--</form>-->
+
 	</div>
 
 	<script type="text/javascript">
