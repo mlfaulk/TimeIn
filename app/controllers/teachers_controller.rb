@@ -49,12 +49,15 @@ class TeachersController < ApplicationController
 
 		date_time = @incident.date_time
 		@time = date_time.strftime("%A, %b %d, %H:%M")
-		diff = (@incident.end_time - date_time)
 
 		##seconds = (@incident.end_time.seconds-date_time.seconds)
 		##mins = (@incident.end_time.min-date_time.seconds)
-
-		@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
+		##We need to do something if the TimeIn is not completed
+		if @incident.end_time === -1
+			@duration = "TimeIn NOTE COMPLETED"
+		else
+			@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
+		end
 
 		##if (seconds<0) then
 		##	seconds = seconds + 60
