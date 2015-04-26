@@ -1,4 +1,6 @@
 <div class="student-background">
+	<p class="login-btn green-text small-motto col-md-2">Teacher Login</p>
+
 	<div>
 		<a href="chill">
 			<p class="title motto blue-text" id="start_btn" >START</p>
@@ -11,13 +13,12 @@
     <div class="row filler"></div>
     
 
-	<p class="login-btn green-text col-md-2">Teacher Login</p>
 
-	<div id="login-box" class="login-popup">
+	<div id="login-box" class="login-popup container col-md-4">
 		<div class="teacher-icon">
 	        <%= image_tag("teacher_icon.png") %>
 		</div>
-		<p class="small-txt">Teacher Login</p>
+		<p class="login-text">Teacher Login</p>
 	    <%= image_tag("close_pop.png", class: "close", alt:"X") %>
 	    <%= form_tag(controller: "teachers", action: "post_teacher_login", method: "post") do %>
 
@@ -27,12 +28,13 @@
 	        <%= text_field_tag(:username)%><br>
 	        <%= label_tag 'Password:' %>
 	        <%= password_field_tag(:password) %>
-	        
+	        <div class="row filler"></div>
+
 	        <!--<button class="submit button-login" type="button">Sign in</button>-->
 	        <p class="submit rounded orange-text"><%= submit_tag("Sign In") %></p>
 
-	        <p class="small-txt">
-	            <a class="forgot" href="#">Forgot your password?</a>
+	        <p class="login-text">
+	            <a class="forgot" href="#">Forgot?</a>
 	        </p>        
 	    </div>
 	    <% end %>
