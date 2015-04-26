@@ -53,8 +53,8 @@ class TeachersController < ApplicationController
 		##seconds = (@incident.end_time.seconds-date_time.seconds)
 		##mins = (@incident.end_time.min-date_time.seconds)
 		##We need to do something if the TimeIn is not completed
-		if @incident.end_time === -1
-			@duration = "TimeIn NOTE COMPLETED"
+		if @incident.end_time === -1 || @incident.end_time === nil
+			@duration = "TimeIn NOT COMPLETED"
 		else
 			@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
 		end
