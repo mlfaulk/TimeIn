@@ -90,6 +90,38 @@ body {
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);   
 }
 
+.icon-med {
+    display: block;
+    padding: 8px;
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 7%;
+	width: 56px;
+	height: 56px;
+	border-radius: 28px;
+	-webkit-border-radius: 28px;
+	-moz-border-radius: 28px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);   
+}
+
+.icon-med-large {
+    display: block;
+    padding: 8px;
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 7%;
+	width: 120px;
+	height: 120px;
+	border-radius: 60px;
+	-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);   
+}
+
 .icon-large {
 /*    display: bloc;
     margin: auto;*/
@@ -124,7 +156,6 @@ body {
     border-color: black;
 }
 
-
 .center-text {
     text-align: center;
 }
@@ -133,25 +164,6 @@ body {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
-}
-
-.motto {
-    font-size: 150px;
-    font-family: 'Unkempt', cursive;
-    ##color: paleturquoise
-    text-align: center;
-}
-
-.small-motto {
-    font-family: 'Unkempt', cursive;
-    font-size: 120px; 
-    text-align: center;
-}
-
-.tiny-motto {
-    font-family: 'Unkempt', cursive;
-    font-size: 90px; 
-    text-align: center;
 }
 
 .tiny-logo {
@@ -177,13 +189,20 @@ body {
 .desc-space {
     font-size: 26px;
     font-family: 'Unkempt', cursive;
-    color: white;
     text-align: center;
+    color: white;
     padding-top: 27px;
 }
 
 .small-desc {
     font-size: 20px;
+    font-family: 'Unkempt', cursive;
+    color: white;
+    text-align: center;
+}
+
+.small-med-desc {
+    font-size: 23px;
     font-family: 'Unkempt', cursive;
     color: white;
     text-align: center;
@@ -200,7 +219,6 @@ body {
 .large-desc {
     font-size: 35px;
     font-family: 'Unkempt', cursive;
-    color: white;
     text-align: center;
 }
 
@@ -282,12 +300,8 @@ body {
     padding-top: 2%;
 }
 
-.im-centered { 
-    margin: auto;
-}
-
 .logo {
-    font-family: cursive;
+    font-family: 'Unkempt', cursive;
     font-size: 25px;
 }
 
@@ -358,8 +372,6 @@ body {
 
 
 
-
-
 /* ------------------------------------- */
 /* STUDENT STYLE */
 select {
@@ -368,13 +380,12 @@ select {
     text-align: left;
     background-color: white;
     font-family: 'Unkempt', cursive;
-    color: paleturquoise
 }
 
-ul {
+.list {
     font-family: 'Unkempt', cursive;
-    color: white; 
     align-content: center;
+    font-weight: bold;
 }
 
 textarea {
@@ -382,6 +393,10 @@ textarea {
     height: 200px;
     opacity: .6;
     background-color: white;
+}
+
+.arrow-scroll {
+    color: white;
 }
 
 .large_box {
@@ -424,28 +439,11 @@ textarea {
 }
 
 a:hover {
-   background-color: yellow;
+   background-color: coral;
 }
 
 .lit {
     background-color: black;
-}
-
-img.arrow:hover {
-    
-}
-
-.circular {
-    display: block;
-    margin: auto;
-	width: 200px;
-	height: 200px;
-	border-radius: 100px;
-	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);    
 }
 
 .title {
@@ -495,42 +493,12 @@ img.arrow:hover {
     text-align: center;
 }
 
-.desc {
-    font-size: 30px;
+.tiniest-motto {
     font-family: 'Unkempt', cursive;
-    color: white;
+    font-size: 70px; 
     text-align: center;
 }
 
-.desc-space {
-    font-size: 26px;
-    font-family: 'Unkempt', cursive;
-    color: white;
-    text-align: center;
-    padding-top: 27px;
-}
-
-.small-desc {
-    font-size: 20px;
-    font-family: 'Unkempt', cursive;
-    color: white;
-    text-align: center;
-}
-
-.med-desc {
-    font-size: 28px;
-    font-family: 'Unkempt', cursive;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.large-desc {
-    font-size: 35px;
-    font-family: 'Unkempt', cursive;
-    color: white;
-    text-align: center;
-}
 
 .prompt {
     font-size: 20px;
@@ -548,9 +516,8 @@ img.arrow:hover {
 
 
 .large {
-    font-size: 30px;
+    font-size: 35px;
 }
-
 
 .strip {
     background-color: rgba(249, 249, 249, .6);
@@ -564,8 +531,7 @@ img.arrow:hover {
 .arrow {
     width: 50%;
     height: 50%;
-    margin-top: 20%;
-    
+    margin-top: 20%;  
 }
 
 .arrow-small {
@@ -574,10 +540,16 @@ img.arrow:hover {
     margin-left: 40px;
 }
 
+/*
 .arrow-scroll {
     width: 50%;
     height: 50%;
     align-content: center;
+}
+*/
+
+a:hover, a:focus {
+    color: white;
 }
 
 .textbox { 
@@ -594,12 +566,6 @@ img.arrow:hover {
     opacity: .6;
 }
 
-.rounded {
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
-}
-
 .drag-green {
     background-color: lightgreen;
     height: 300px;
@@ -610,7 +576,6 @@ img.arrow:hover {
     background-color: lightcoral;
     height: 300px;
     opacity: .7;
-    
 }
 
 .drag-img {
@@ -639,18 +604,26 @@ img.arrow:hover {
     color: black;
 }
 
-
 #chillPageNextBtn {
     visibility: hidden;
 }
 
+.upper_logo {
+    font-family: 'Unkempt', cursive;
+    font-size: 28px;
+    color: rgba(179, 214, 167, 1);
+    padding-top: 12%;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
 
 .upper_name {
     font-family: 'Unkempt', cursive;
-    padding-top: 15%;
-    padding-left: 20px;
     font-size: 22px;
-
+    color: white;
+    padding-top: 15%;
+    padding-left: 70px;
+    margin-bottom: 0px;
 }
 
 .submit {
@@ -710,7 +683,7 @@ img.arrow:hover {
     margin-right:3%;
     background-color:#a0db8e;
     float:left;
-    min-height: 300px;
+    min-height: 220px;
 
 }
 
@@ -720,7 +693,7 @@ img.arrow:hover {
     margin-right:2%;
     float:left;
     background-color:#db8ea0;
-    min-height: 300px;
+    min-height: 220px;
 
 }
 
@@ -740,5 +713,5 @@ img.arrow:hover {
 }
 
 .chartraits {
-    width:40%;
+    width:36%;
 }
