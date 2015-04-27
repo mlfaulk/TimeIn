@@ -16,3 +16,5 @@
 //= require jcarousel.basic
 //= require jquery.jcarousel.min
 //= require_tree .
+//= require jquery.flot
+//= require jquery.flot.pie

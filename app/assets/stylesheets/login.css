@@ -57,8 +57,11 @@ p.login-btn {
     margin:10%;
 }
 
-.login-popup p {
+.login-text {
     text-align: center;
+    font-size:1em;
+    font-family: 'Unkempt', cursive;
+
 }
 
 img.btn_close {
@@ -72,7 +75,7 @@ form.signin input {
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    font: 13px Arial, Helvetica, sans-serif;
+    font: 13px 'Unkempt', cursive, sans-serif;
     padding: 6px 6px 4px;
     width: 100%;
     margin-bottom:5%;
@@ -108,6 +111,3 @@ form.signin input::-webkit-input-placeholder {
     background: #999;
 }
 
-.small-txt {
-    font-size:.8em;
-}

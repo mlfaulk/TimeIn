@@ -32,9 +32,13 @@ class TeachersController < ApplicationController
 		visits = Visit.all
 		@updates = Visit.order("created_at").reverse_order.limit(5)
 
+
 		@num_lastweek = Visit.where(created_at: (1.week.ago)..Time.now).count
 		@num_twoweeksago = Visit.where(created_at: (2.week.ago)..(1.week.ago)).count
 
+		@dataarr = Array.new
+		@dataarr.push [1, @num_lastweek]
+		@dataarr.push [2, @num_twoweeksago]
 	end
 
 
@@ -45,19 +49,22 @@ class TeachersController < ApplicationController
 
 		date_time = @incident.date_time
 		@time = date_time.strftime("%A, %b %d, %H:%M")
-		diff = (@incident.end_time - date_time)
 
 		##seconds = (@incident.end_time.seconds-date_time.seconds)
 		##mins = (@incident.end_time.min-date_time.seconds)
-
-		@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
+		##We need to do something if the TimeIn is not completed
+		if @incident.end_time === -1 || @incident.end_time === nil
+			@duration = "TimeIn NOT COMPLETED"
+		else
+			@duration = distance_of_time_in_words(date_time, @incident.end_time, include_seconds: true)
+		end
 
 		##if (seconds<0) then
 		##	seconds = seconds + 60
 		##end 
-
-		@relateds_student = Visit.where(student_id:@student.id).last(3)
-		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id)
+		@response = @incident.task_text
+		@relateds_student = Visit.where(student_id:@student.id).where.not(id:id).last(3)
+		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id).where.not(id:id).last(3)
 
 	end
 
