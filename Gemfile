@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,8 +39,12 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 #Flot 
-gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
+gem 'flot-rails'
 
 # Enable ActiveRecord session store
 gem 'activerecord-session_store'
+
+#Adds Rails as a static asset to heroku [rails_12factor]
+gem 'rails_12factor', group: :production
+
 
