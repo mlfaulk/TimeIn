@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use postgres as the database for Active Record
-gem 'pg'
+gem "pg"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,5 +47,7 @@ gem 'activerecord-session_store'
 
 #Adds Rails as a static asset to heroku [rails_12factor]
 gem 'rails_12factor', group: :production
+
+ruby "2.0.0"
 
 
