@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412005546) do
+ActiveRecord::Schema.define(version: 20150428215502) do
 
   create_table "notes", force: true do |t|
     t.text     "note_text"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20150412005546) do
     t.integer  "visit_count"
     t.integer  "current_reason_num"
     t.integer  "current_visit_id"
+    t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students_teachers", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
