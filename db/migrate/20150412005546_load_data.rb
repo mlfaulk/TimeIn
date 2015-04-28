@@ -4,11 +4,11 @@ class LoadData < ActiveRecord::Migration
     down
 
     #test students
-    mg = Student.new(:firstname => "Maggie", :lastname => "Goulder", :username => "Maggie", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "")
+    mg = Student.new(:firstname => "Maggie", :lastname => "Goulder", :username => "Maggie", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "face.png")
     mg.save(:validate => false)
-    je = Student.new(:firstname => "Julia", :lastname => "Enthoven", :username => "Julia", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "")
+    je = Student.new(:firstname => "Julia", :lastname => "Enthoven", :username => "Julia", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "face.png")
     je.save(:validate => false)
-    mf = Student.new(:firstname => "Megan", :lastname => "Faulk", :username => "Megan", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "")
+    mf = Student.new(:firstname => "Megan", :lastname => "Faulk", :username => "Megan", :gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "face.png")
     mf.save(:validate => false)
 
     #real students
@@ -16,13 +16,13 @@ class LoadData < ActiveRecord::Migration
     pc.save(:validate => false)
     jek = Student.new(:firstname => "Jorge", :lastname => "Ek", :username => "Jorge",:gender => 2, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "Ek.JPG")
     jek.save(:validate => false)
-    se = Student.new(:firstname => "Shawn", :lastname => "Esteves", :username => "Shawn",:gender => 2, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "")
+    se = Student.new(:firstname => "Shawn", :lastname => "Esteves", :username => "Shawn",:gender => 2, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "face.png")
     se.save(:validate => false)
     jg = Student.new(:firstname => "James", :lastname => "Gayapa", :username => "James",:gender => 2, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "Gayapa.JPG")
     jg.save(:validate => false)
     mh = Student.new(:firstname => "Malachi", :lastname => "Huang", :username => "Malachi",:gender => 2, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "Huang.JPG")
     mh.save(:validate => false)
-    gl = Student.new(:firstname => "Gisella", :lastname => "Lemus", :username => "Gisella",:gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "")
+    gl = Student.new(:firstname => "Gisella", :lastname => "Lemus", :username => "Gisella",:gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "face.png")
     gl.save(:validate => false)
     km = Student.new(:firstname => "Katia", :lastname => "Martinez", :username => "Katia",:gender => 1, :visit_count => 0, :current_reason_num => 0, :current_visit_id => 0, :image_file_name => "Martinez.JPG")
     km.save(:validate => false)
