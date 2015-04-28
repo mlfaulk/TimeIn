@@ -139,7 +139,7 @@
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
                                <!-- <a href="learn"><p class="finish orange-text">FINISH</p></a> --> 
-                               <p class="finish orange-text"><%= link_to "FINISH", controller: "students", action: "learn", id: params[:id] %></p>
+                               <p class="finish orange-text"><%= link_to "FINISH", { controller: "students", action: "learn" }, id: params[:id], class: "blue-text submit-large" %></p>
                             </div>
                             <div class="col-md-3"></div>
                         </div>
@@ -150,8 +150,8 @@
         </div>
 
 
-        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        <a href="#" class="jcarousel-control-prev arrow-scroll">&lsaquo;</a>
+        <a href="#" class="jcarousel-control-next arrow-scroll">&rsaquo;</a>
 
         <p class="jcarousel-pagination">
 

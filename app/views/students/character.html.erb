@@ -4,9 +4,7 @@
     <!-- Navigation Bar -->
     <div class="row strip">
         <div class="col-md-2"><p class="upper_logo center-block">TimeIn</p></div>
-        <div class="col-md-1">
-<!--            <a href="login"><%= image_tag("arrow-left.png", class: "arrow center-block") %></a>-->
-        </div>
+        <div class="col-md-1"></div>
         <div class="col-md-1">
             <%= image_tag("relax.png", class: "icon-med green") %>
         </div>
@@ -30,16 +28,12 @@
         <div class="col-md-1">
             <%= image_tag("done.png", class: "icon-med darkpink") %>
         </div>
-
-
-
-<!--             <a href="../strength"><%= image_tag("arrow-right.png", class: "arrow center-block") %></a> -->
+        
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <p class="upper_name">Hi, <%=@name%></p>
         </div>
-
-        <div class="col-md-2"><p class="upper_name center-block">Hi, <%=@name%></p></div>
     </div>
-            
-
 
     <!-- SCROLL BAR -->
     <div class="wrapper">
@@ -104,9 +98,8 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <p class="tiny-motto orange-text"><%= link_to "Submit", controller: "students", action: "strength", id: params[:id] %></p>
+                            <%= link_to "Submit", { controller: "students", action: "strength" } , id: params[:id], class: "orange-text submit-large" %>
                             <!-- <a href="../strength"><p class="tiny-motto orange-text">Submit</p></a> -->
-
                         </div>
                         <div class="col-md-3"></div>
                     </div>
