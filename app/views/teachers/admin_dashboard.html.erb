@@ -77,26 +77,9 @@
                                 <p class="update-title">
                                         <%= link_to update.date_time.strftime("%A, %b %d | %l:%M"), controller: "teachers", action: "admin_incident_detail", id: update.id %></p>
                                             <% student = Student.find(update.student_id) %>
-                                            <% gender_num = student.gender %>
-                                            <% if (gender_num == 1) then %>
-                                                <% pronoun = "she" %>
-                                            <% else %>
-                                                <% pronoun = "he" %>
-                                            <% end %>
+                                            
 
-                                            <% reason_num = update.reason_num.to_i %>
-                                            <% if (reason_num == 1) then %>
-                                                <% reason = "spoke when " + pronoun + " was supposed to be quiet." %>
-                                            <% elsif (reason_num == 2) then %>
-                                                <% reason = "used inappropriate language." %>
-            
-                                            <% elsif (reason_num == 3) then %>
-                                                <% reason = "was mean to a classmate." %>
-                                            <% elsif (reason_num == 4) then %>
-                                                <% reason = "was disruptive to the class." %>
-                                            <% end %>
-
-                                <p class="update-desc"><%= student.firstname %> <%= student.lastname %> <%= reason %></p>
+                                <p class="update-desc"><%= student.firstname %> <%= student.lastname %> <%= update.get_reason() %>.</p>
                             </div>
                         </div>
                     </div>

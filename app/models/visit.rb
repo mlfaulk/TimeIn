@@ -4,17 +4,17 @@ class Visit < ActiveRecord::Base
 	def get_reason()
 		reason_num = self.reason_num.to_i
 		if (reason_num == 1) then
-			return "spoke when " + get_student().gender_pronoun() + " was supposed to be quiet."
+			return "spoke when " + get_student().gender_pronoun() + " was supposed to be quiet"
 		elsif (reason_num == 2) then 
-			return "used inappropriate language."
+			return "used inappropriate language"
 		elsif (reason_num == 3) then
-			return "was mean to a classmate."
+			return "was mean to a classmate"
 		elsif (reason_num == 4) then
-			return "was disruptive to the class."
+			return "was disruptive to the class"
 		elsif (reason_num == 5) then
-			return "was disrespectful."
+			return "was disrespectful"
 		elsif (reason_num == 6) then
-			return "was agressive or violent in class."
+			return "was agressive or violent in class"
 		end
 
 	end
