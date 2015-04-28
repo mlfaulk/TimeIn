@@ -9,6 +9,7 @@ class CreateStudents < ActiveRecord::Migration
     	t.integer	:current_reason_num 	# Matches with order of options in dropdown menu.  
     										              # For example, 1="Spoke when he/she was supposed to be quiet."
     	t.integer	:current_visit_id		
+      t.string  :image_file_name
 
       t.timestamps
     end
