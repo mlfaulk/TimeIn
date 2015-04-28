@@ -134,29 +134,19 @@
                             </div>
                         </div>
 
-<<<<<<< HEAD
-        <!--Finish button*/-->
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                   <!--<a href="learn"><p class="finish orange-text">FINISH</p></a>-->
-                   <p class="finish orange-text"><%= link_to "FINISH", controller: "students", action: "learn", id: @student_id %></p>
-                </div>
-                <div class="col-md-3"></div>
-            </div>
-=======
                         <!--Finish button*/-->
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                               <a href="learn"><p class="finish orange-text">FINISH</p></a>
+                               <!-- <a href="learn"><p class="finish orange-text">FINISH</p></a> --> 
+                               <p class="finish orange-text"><%= link_to "FINISH", controller: "students", action: "learn", id: params[:id] %></p>
                             </div>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
                 </li>
             </ul>
->>>>>>> 0201d9857358dd546edc5d7e6949c4d5cd84c469
+
         </div>
 
 
