@@ -1,117 +1,155 @@
 <div class="student-background">
-    <div id="5.1">
-            <!-- Navigation Bar -->
-            <div class="row strip">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-1">
-                        <!-- <a href="done.html"><img class="arrow center-block" src="images/arrow-left.png"/></a> -->
+
+    <!-- Navigation Bar -->
+    <div class="row strip">
+        <div class="col-md-2"><p class="upper_logo center-block">TimeIn</p></div>
+        <div class="col-md-1">
+<!--            <a href="login"><%= image_tag("arrow-left.png", class: "arrow center-block") %></a>-->
+        </div>
+        <div class="col-md-1">
+            <%= image_tag("relax.png", class: "icon-med green") %>
+        </div>
+
+        <div class="col-md-1">
+            <%= image_tag("check.png", class: "icon-med orange") %>
+        </div>
+
+        <div class="col-md-1">
+            <%= image_tag("character.png", class: "icon-med purple") %>
+        </div>
+
+        <div class="col-md-1">
+            <%= image_tag("strong.png", class: "icon-med blue") %>
+        </div>
+
+        <div class="col-md-1 lit">
+            <%= image_tag("learn.png", class: "icon-med pink") %>
+        </div>
+
+        <div class="col-md-1">
+            <%= image_tag("done.png", class: "icon-med darkpink") %>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+
+<!--        <div class="col-md-2"><p class="upper_name center-block">Hi, <%=@name%></p></div>-->
+    </div>
+    
+    <div class="wrapper">
+    <div class="jcarousel-wrapper">
+        <div class="jcarousel">
+            <ul class="scroll">
+                <li class="scroll">
+                    <div class="scroll-box">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <p class="small-motto pink-text">Don't forget!</p>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <p class="desc-space"> When you are angry, close your eyes and take three deep breaths.</p>
+                            </div>
+                            <div class="col-md-4"></div>       
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <%= image_tag("temper.png", class: "icon-large center-block green") %>
+                            </div>
+                             <div class="col-md-5"></div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p class="desc-space shift-right">When someone else is struggling, give them encouragement</p>
+                            </div>
+                            <div class="col-md-3">
+                                <%= image_tag("encourage.png", class: "icon-large center-block green") %>
+                            </div>
+                            <div class="col-md-3">
+                                <%= image_tag("rejoice.png", class: "icon-large center-block green") %>
+                            </div>
+                            <div class="col-md-3">
+                                <p class="desc-space shift-left"> When someone else succeeds, rejoice with them</p>
+                            </div>
+                        </div>
+<!--
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <%= image_tag("thought.png", class: "icon-med-large center-block green") %>
+                            </div>
+                             <div class="col-md-5"></div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <p class="desc-space">Before you speak, think about how your words will affect other people.</p>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+-->
+                    <div class="row filler"></div>
                     </div>
-                    <div class="col-md-1">
-                        <%= image_tag("relax.png", class: "icon green") %>
-                    </div>
-                    <div class="col-md-1">
-                        <%= image_tag("check.png", class: "icon orange") %>
-                    </div>
-                    <div class="col-md-1">
-                        <%= image_tag("character.png", class: "icon purple") %>
-                    </div>
-                    <div class="col-md-1">
-                        <%= image_tag("strong.png", class: "icon blue") %>
-                    </div>
-                    <div class="col-md-1 lit">
-                        <%= image_tag("learn.png", class: "icon pink") %>
-                    </div>
-                    <div class="col-md-1">
-                        <%= image_tag("done.png", class: "icon darkpink") %>
-                    </div>
-                    <div class="col-md-1">
-                        <!-- <a href="done"><img class="arrow center-block" src="images/arrow-right.png"/></a> -->
+                </li>
+                <li class="scroll">
+                    <div class="scroll-box">
+                        <div class="row">
+                             <div class="col-md-1"></div>
+                             <div class="col-md-10">
+                                <p class="tiny-motto pink-text">To finish recovering: </p>
+                                <p class="med-desc pink-text">Click on what you would like to do! </p>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div class="row filler-small"></div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2">
+                                <a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                <a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                 <a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
                     </div>
 
-                    <div class="col-md-2"><p class="upper_name center-block">Hi, <%=@name%></p></div>  
-            </div>
-            <div class="row filler"></div>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <p class="small-motto pink-text">Don't forget!</p>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-        
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <p class="desc-space"> When you are angry, close your eyes and take three deep breaths.</p>
-                </div>
-                <div class="col-md-4"></div>       
-            </div>
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-2">
-                    <%= image_tag("temper.png", class: "icon-large center-block green") %>
-                </div>
-                 <div class="col-md-5"></div> 
-            </div>
-            <div class="row-filler"></div>
-            <div class="row">
-                <div class="col-md-3">
-                    <p class="desc-space shift-right">When someone else is struggling, give them encouragement</p>
-                </div>
-                <div class="col-md-3">
-                    <%= image_tag("encourage.png", class: "icon-large center-block green") %>
-                </div>
-                <div class="col-md-3">
-                    <%= image_tag("rejoice.png", class: "icon-large center-block green") %>
-                </div>
-                <div class="col-md-3">
-                    <p class="desc-space shift-left"> When someone else succeeds, rejoice with them</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-2">
-                    <%= image_tag("thought.png", class: "icon-large center-block green") %>
-                </div>
-                 <div class="col-md-5"></div> 
-            </div>
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <p class="desc-space">Before you speak, think about how your words will affect other people.</p>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-        
-            <div class="row filler"></div>
-            <div class="row filler"></div>
-            <div class="row">
-                 <div class="col-md-2"></div>
-                 <div class="col-md-8">
-                    <p class="tiny-motto pink-text">To finish recovering: </p>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-        
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-2">
-                    <!--<a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>-->
-                    <p class="small-p purple"><%= link_to "Make a promise to yourself.", controller: "students", action: "promise", id: @student_id %></p>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-2">
-                    <!--<a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a>-->
-                    <p class="small-p blue"><%= link_to "Write something to your teacher.", controller: "students", action: "teacher", id: @student_id %></p>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-2">
-                     <!--<a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a>-->
-                     <p class="small-p orange"><%= link_to "Write about how you are feeling.", controller: "students", action: "freewrite", id: @student_id %></p>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+        <p class="jcarousel-pagination">
+
+        </p>
+
     </div>
-    <div class="row filler"></div>
+    </div>         
 </div>
+
+<script type="text/javascript">
+
+    window.onload = function() { 
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
+    window.onload();
+    
+</script>
 

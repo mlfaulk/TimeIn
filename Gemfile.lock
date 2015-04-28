@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/Kjarrigan/flot-rails.git
+  revision: c3b0cb2850f237e7db91ca58aa6f524f6dfea087
+  specs:
+    flot-rails (0.0.4)
+      jquery-rails (>= 2.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -114,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-session_store
   coffee-rails (~> 4.0.0)
+  flot-rails!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.7)
