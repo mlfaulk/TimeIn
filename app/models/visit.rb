@@ -11,6 +11,10 @@ class Visit < ActiveRecord::Base
 			return "was mean to a classmate."
 		elsif (reason_num == 4) then
 			return "was disruptive to the class."
+		elsif (reason_num == 5) then
+			return "was disrespectful."
+		elsif (reason_num == 6) then
+			return "was agressive or violent in class."
 		end
 
 	end

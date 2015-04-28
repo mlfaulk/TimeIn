@@ -4,7 +4,7 @@
             <div class="row strip">
                     <div class="col-md-2"></div>
                     <div class="col-md-1">
-                        <a href="character"><%= image_tag("arrow-left.png", class: "arrow center-block") %></a>
+                        <!-- <a href="character"><%= image_tag("arrow-left.png", class: "arrow center-block") %></a> -->
                     </div>
                     <div class="col-md-1">
                         <%= image_tag("relax.png", class: "icon green") %>
@@ -25,9 +25,10 @@
                         <%= image_tag("done.png", class: "icon darkpink") %>
                     </div>
                     <div class="col-md-1">
-                        <a href="learn"><%= image_tag("arrow-right.png", class: "arrow center-block") %></a>
+                        <!-- <a href="learn"><%= image_tag("arrow-right.png", class: "arrow center-block") %></a> -->
                     </div>
-                    <div class="col-md-2"></div>    
+
+                    <div class="col-md-2"><p class="upper_name center-block">Hi, <%=@name%></p></div>   
             </div>
 
             <div class="row filler"></div>
@@ -139,7 +140,8 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                   <a href="learn"><p class="finish orange-text">FINISH</p></a>
+                   <!--<a href="learn"><p class="finish orange-text">FINISH</p></a>-->
+                   <p class="finish orange-text"><%= link_to "FINISH", controller: "students", action: "learn", id: @student_id %></p>
                 </div>
                 <div class="col-md-3"></div>
             </div>

@@ -14,6 +14,8 @@ class LoadData < ActiveRecord::Migration
     jr.save(:validate => false)
     vi = Teacher.new(:firstname => "Vanessa", :lastname => "Irving", :username => "virving", :password => "12345")
     vi.save(:validate => false)
+    t = Teacher.new(:firstname => "teacherFirst", :lastname => "teacherLast", :username => "testaccount", :password => "12345")
+    jr.save(:validate => false)
     
     # Create initial photos.
     #photo1 = Photo.new(:date_time => "2012-08-30 10:44:23",

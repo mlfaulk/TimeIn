@@ -27,7 +27,8 @@
                     <div class="col-md-1">
                         <!-- <a href="done"><img class="arrow center-block" src="images/arrow-right.png"/></a> -->
                     </div>
-                    <div class="col-md-2"></div>    
+
+                    <div class="col-md-2"><p class="upper_name center-block">Hi, <%=@name%></p></div>  
             </div>
             <div class="row filler"></div>
             <div class="row">
@@ -95,15 +96,18 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2">
-                    <a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>
+                    <!--<a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>-->
+                    <p class="small-p purple"><%= link_to "Make a promise to yourself.", controller: "students", action: "promise", id: @student_id %></p>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
-                    <a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a>
+                    <!--<a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a>-->
+                    <p class="small-p blue"><%= link_to "Write something to your teacher.", controller: "students", action: "teacher", id: @student_id %></p>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
-                     <a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a>
+                     <!--<a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a>-->
+                     <p class="small-p orange"><%= link_to "Write about how you are feeling.", controller: "students", action: "freewrite", id: @student_id %></p>
                 </div>
                 <div class="col-md-1"></div>
             </div>
