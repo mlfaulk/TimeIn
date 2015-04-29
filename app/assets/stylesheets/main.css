@@ -395,9 +395,13 @@ textarea {
     background-color: white;
 }
 
+
+a.arrow-scroll:visited {}
+a.arrow-scroll:hover {background-color: coral; }
 .arrow-scroll {
     color: white;
 }
+
 
 .large_box {
     width: 100%;
@@ -439,8 +443,11 @@ textarea {
 }
 
 a:hover {
-   background-color: coral;
+   ##background-color: coral;
+    color: aqua
 }
+
+
 
 .lit {
     background-color: black;
@@ -632,6 +639,19 @@ a:hover, a:focus {
     font-size: 25px;
     font-weight: bold;
     font-family: 'Unkempt', cursive;
+}
+
+a.submit-large:hover {font-weight: bold; color: coral;}
+.submit-large {
+    font-family: 'Unkempt', cursive;
+    font-size: 90px; 
+    text-align: center;
+    color: coral;
+}
+
+a.action-step:hover {}
+.action-step {
+    color: white;
 }
 
 .center {
