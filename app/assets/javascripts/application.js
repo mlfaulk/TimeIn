@@ -18,3 +18,4 @@
 //= require_tree .
 //= require jquery.flot
 //= require jquery.flot.pie
+//= require bootstrap
