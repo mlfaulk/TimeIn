@@ -112,17 +112,17 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-2">
                                 <!--<a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>-->
-                                <p class="small-p purple"><%= link_to "Make a promise to yourself.", controller: "students", action: "promise", id: params[:id] %></p>
+                                <p class="small-p purple"><%= link_to "Make a promise to yourself.", { controller: "students", action: "promise" }, id: params[:id], class: "action-step" %></p>
                             </div>
                             <div class="col-md-2"></div>
                             <div class="col-md-2">
                                 <!-- <a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a> -->
-                                <p class="small-p blue"><%= link_to "Write something to your teacher.", controller: "students", action: "teacher", id: params[:id] %></p>
+                                <p class="small-p blue"><%= link_to "Write something to your teacher.", { controller: "students", action: "teacher" }, id: params[:id], class: "action-step" %></p>
                             </div>
                             <div class="col-md-2"></div>
                             <div class="col-md-2">
                                  <!-- <a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a> -->
-                                 <p class="small-p orange"><%= link_to "Write about how you are feeling.", controller: "students", action: "freewrite", id: params[:id] %></p>
+                                 <p class="small-p orange"><%= link_to "Write about how you are feeling.", { controller: "students", action: "freewrite" }, id: params[:id], class: "action-step" %></p>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -133,8 +133,8 @@
         </div>
 
 
-        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        <a href="#" class="jcarousel-control-prev arrow-scroll">&lsaquo;</a>
+        <a href="#" class="jcarousel-control-next arrow-scroll">&rsaquo;</a>
 
         <p class="jcarousel-pagination">
 
