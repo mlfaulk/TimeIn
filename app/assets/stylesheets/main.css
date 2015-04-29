@@ -27,7 +27,7 @@
 .yellow-text { color: rgba(222, 207, 93, 1);}
 
 body {
-    background-image: url(black-chalk.jpg);
+    background-image: url(../images/black-chalk.jpg);
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
@@ -38,7 +38,7 @@ body {
 
 .student-background {
     height: 100vh;
-    background-image: url(black-chalk.jpg);
+    background-image: url(../images/black-chalk.jpg);
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
@@ -48,7 +48,7 @@ body {
 }
 
 .teacher-background {
-    background-image: url(grey-chalk.jpg);
+    background-image: url(../images/grey-chalk.jpg);
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
