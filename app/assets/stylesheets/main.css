@@ -441,7 +441,7 @@ a.arrow-scroll:hover {background-color: coral; }
 
 a:hover {
    background-color: coral;
-    color: aqua
+   color: aqua;
 }
 
 
@@ -481,7 +481,7 @@ a:hover {
 .motto {
     font-size: 150px;
     font-family: 'Unkempt', cursive;
-    color: paleturquoise
+    color: paleturquoise;
     text-align: center;
 }
 
