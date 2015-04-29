@@ -65,13 +65,23 @@ class StudentsController < ApplicationController
 	def chill() 
 	end
 
+	def strength()
+		@student_id = params[:id]
+		student = Student.find(@student_id)
+		@name = student.firstname
+	end
+
+
 	def character()
-		student_id = params[:id]
-		student = Student.find(student_id)
+		@student_id = params[:id]
+		student = Student.find(@student_id)
 		@name = student.firstname
 	end
 
 	def learn()
+		@student_id = params[:id]
+		student = Student.find(@student_id)
+		@name = student.firstname
 	end
 
 	def post_task()
@@ -85,6 +95,10 @@ class StudentsController < ApplicationController
 	end
 
 	def teacher()
+		@student_id = params[:id]
+		student = Student.find(@student_id)
+		@name = student.firstname
+
 		#update task choice
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
@@ -95,6 +109,10 @@ class StudentsController < ApplicationController
 	end
 
 	def freewrite()
+		@student_id = params[:id]
+		student = Student.find(@student_id)
+		@name = student.firstname
+
 		#update task choice
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
@@ -105,6 +123,10 @@ class StudentsController < ApplicationController
 	end
 
 	def promise()
+		@student_id = params[:id]
+		student = Student.find(@student_id)
+		@name = student.firstname
+		
 		#update task choice
 		student_id = session[:current_user_id]
 		student = Student.find(student_id)
