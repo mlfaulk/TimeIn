@@ -25,6 +25,8 @@ class StudentsController < ApplicationController
 			new_student = Student.new
 			new_student.username = username
 			new_student.visit_count = 1
+			#JULIA'S EDITS: default image for anyone not in the system
+			new_student.image_file_name = 'face.png'
 			new_student.current_reason_num = params[:reason_num]
 
 			if new_student.save then
