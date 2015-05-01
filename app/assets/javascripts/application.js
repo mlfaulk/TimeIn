@@ -10,12 +10,18 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery-2.1.3.min
+//= require jquery-ui.min
+//= require jquery.foggy.min
 //= require jquery_ujs
 //= require turbolinks
 //= require jcarousel.basic
 //= require jquery.jcarousel.min
 //= require_tree .
 //= require jquery.flot.min
-//= require jquery.flot.pie
-//= require bootstrap
+//= require jquery.flot.pie.min
+//= require jquery.flot.resize.min
+//= require jquery.flot.stack.min
+//= require jquery.flot.time.min
+//= require bootstrap.min
+//= require timer
