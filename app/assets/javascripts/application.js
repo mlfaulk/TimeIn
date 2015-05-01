@@ -26,5 +26,4 @@
 //= require jquery.flot.time.min
 //= require bootstrap
 //= require timer
-//= require Dragger
 
