@@ -394,9 +394,10 @@ textarea {
     opacity: .6;
     background-color: white;
 }
-
-
-a.arrow-scroll:visited {}
+a {
+    color: white;
+    text-decoration:none;
+}
 a.arrow-scroll:hover {background-color: coral; }
 .arrow-scroll {
     color: white;
@@ -443,9 +444,8 @@ a.arrow-scroll:hover {background-color: coral; }
 }
 
 a:hover {
-   /*##background-color: coral;*/
     color: aqua;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 
@@ -469,6 +469,7 @@ a:hover {
     font-family: 'Unkempt', cursive;
     text-align: center;
     color: white;
+    text-decoration:none;
     
     padding: 35px;
     padding-top: 60px;
@@ -555,6 +556,11 @@ a:hover {
     align-content: center;
 }
 */
+
+link.hover {
+    text-decoration:none;
+    color:auto;
+}
 
 a:hover, a:focus {
     color: white;
@@ -647,6 +653,7 @@ a.submit-large:hover {font-weight: bold; color: coral;}
     font-family: 'Unkempt', cursive;
     font-size: 90px; 
     text-align: center;
+
     color: coral;
 }
 
@@ -661,6 +668,10 @@ a.action-step:hover {}
 
 #start_btn {
     padding-top: 200px;
+}
+
+#start_btn.hover {
+    text-decoration:none;
 }
 
 #placeholder1 {
