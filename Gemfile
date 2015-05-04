@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+#foggy blurs page elements
+gem 'jquery-foggy-rails', '~> 1.1.1.0'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -44,7 +47,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 #Flot 
-gem 'flot-rails'
+gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
 
 # Enable ActiveRecord session store
 gem 'activerecord-session_store'

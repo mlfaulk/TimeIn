@@ -13,17 +13,16 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery-ui/draggable
-//= require jquery.foggy.min
 //= require jquery_ujs
 //= require turbolinks
 //= require jcarousel.basic
-//= require jquery.jcarousel.min
-//= require_tree .
-//= require jquery.flot.min
-//= require jquery.flot.pie.min
-//= require jquery.flot.resize.min
-//= require jquery.flot.stack.min
-//= require jquery.flot.time.min
+//= require jquery.flot
+//= require jquery.flot.pie
+//= require jquery.flot.resize
+//= require jquery.flot.stack
+//= require jquery.flot.time
 //= require bootstrap
 //= require timer
+//= require_tree .
+
 

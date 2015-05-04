@@ -110,26 +110,19 @@
                         <div class="row filler-small"></div>
                         <div class="row">
                             <div class="col-md-1"></div>
-                            <div class="col-md-2">
-                                <!--<a href="promise"><p class="small-p purple">Make a promise to yourself.</p></a>-->
-                                
+                            <div class="col-md-2">                                
                                     <p class="small-p purple"><%= link_to "Make a promise to yourself.", controller: "students", action: "promise", id: params[:id] %></p>
                             </div>
                             <div class="col-md-2"></div>
-                            <div class="col-md-2">
-                                <!-- <a href="teacher"><p class="small-p blue">Write something to your teacher.</p></a> -->
-                                
-
-                                    <p class="small-p blue"><%= link_to "Write something to your teacher.", controller: "students", action: "teacher", id: params[:id] %></p>
+                            <div class="col-md-2">                                
+                                    <p class="small-p blue"><%= link_to "Write a note to your teacher.", controller: "students", action: "teacher", id: params[:id] %></p>
 
 
                             </div>
                             <div class="col-md-2"></div>
-                            <div class="col-md-2">
-                                 <!-- <a href="freewrite"><p class="small-p orange">Write about how you are feeling.</p></a> -->
-                                 
+                            <div class="col-md-2">                                 
 
-                                    <p class="small-p orange"><%= link_to "Write about how you are feeling.", controller: "students", action: "freewrite", id: params[:id] %></p>
+                                    <p class="small-p orange"><%= link_to "Write about how you are feeling right now", controller: "students", action: "freewrite", id: params[:id] %></p>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
