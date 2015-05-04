@@ -153,7 +153,7 @@ class StudentsController < ApplicationController
 
 		reason_num = @student.current_reason_num
 
-		ModelMailer.new_record_notification(@name).deliver
+		##ModelMailer.new_record_notification(@name).deliver
 
 	end
 
