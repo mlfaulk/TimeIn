@@ -47,6 +47,9 @@
                 <div class="row small-filler"></div>
 
             <% end %>
+            <% if @visits.length==0 %>
+                <p class="zero">This students has no TimeIns to display</p>
+            <% end %>
         </div>
         <div class="col-md-5">
             <p class="update-title center">Number of TimeIns</p>

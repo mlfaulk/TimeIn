@@ -87,6 +87,9 @@
             </div>
             <div class="row small-filler"></div>
         <% end %>
+        <% if @updates.length==0 %>
+                <p class="zero">No recent TimeIns to display</p>
+        <% end %>
 
     </div>
 </div>
