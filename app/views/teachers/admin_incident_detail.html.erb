@@ -97,6 +97,9 @@
                     </div>
                     <div class="row small-filler"></div>
                     <% end %>
+                    <% if @relateds_student.length==0 %>
+                        <p class="zero">No recent incidents to display<p>
+                    <% end %>
                 </div>
                 <div class="col-md-1"></div>
             </div>
@@ -112,6 +115,9 @@
                                 <p class="update-desc"><%= related.get_student().firstname %> <%= related.get_reason() %></p>
                     </div>
                     <div class="row small-filler"></div>
+                    <% end %>
+                    <% if @relateds_incident.length==0 %>
+                        <p class="zero">No related incidents to display<p>
                     <% end %>
                 </div>
                 <div class="col-md-1"></div>
