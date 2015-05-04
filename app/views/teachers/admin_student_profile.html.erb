@@ -16,10 +16,12 @@
         <div class="col-md-2">
              <%= image_tag(@student.image_file_name, class: "icon-face") %>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-6">
             <div class="row filler-small"></div>
             <p class="student-title shift-slight-right"><%= @student.firstname %> <%= @student.lastname %></p>
-            <p class="student-desc shift-slight-right">Julia is in 5th grade. She lives in a single parent household with three brothers in the Tenderloin.</p>
+            <p class="student-desc shift-slight-right"><%= @student.firstname %> is in 3rd grade. Gender pronoun: <%= @student.gender_pronoun() %></p>
             <div class="col-md-1"></div>
         </div>
     </div>
