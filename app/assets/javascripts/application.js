@@ -15,14 +15,14 @@
 //= require jquery-ui/draggable
 //= require jquery_ujs
 //= require turbolinks
-//= require jcarousel.basic
+//= require timer
+//= require bootstrap
 //= require jquery.flot
 //= require jquery.flot.pie
 //= require jquery.flot.resize
 //= require jquery.flot.stack
 //= require jquery.flot.time
-//= require bootstrap
-//= require timer
 //= require_tree .
+
 
 
