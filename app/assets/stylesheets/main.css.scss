@@ -589,13 +589,13 @@ a:hover, a:focus {
 
 .drag-green {
     background-color: lightgreen;
-    height: 300px;
+    height: 200px;
     opacity: .7;
 }
 
 .drag-red {
     background-color: lightcoral;
-    height: 300px;
+    height: 200px;
     opacity: .7;
 }
 
@@ -722,7 +722,7 @@ a.action-step:hover {}
     margin-right:3%;
     background-color:#a0db8e;
     float:left;
-    min-height: 220px;
+    min-height: 200px;
 
 }
 
@@ -732,7 +732,7 @@ a.action-step:hover {}
     margin-right:2%;
     float:left;
     background-color:#db8ea0;
-    min-height: 220px;
+    min-height: 200px;
 
 }
 
@@ -741,14 +741,15 @@ a.action-step:hover {}
 }
 
 .words {
-    font-size:11px;
+    font-size:12px;
+    font-weight: bold;
     text-align: center;
-    font-family:Arial;
+    font-family: Arial;
 }
 
 .charheader {
     text-align: center;
-    font-family:Arial;
+    font-family:'Poiret One', Arial;
 }
 
 .chartraits {
