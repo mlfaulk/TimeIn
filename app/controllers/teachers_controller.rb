@@ -2,7 +2,7 @@ class TeachersController < ApplicationController
 	def admin_student_profile()
 		id = params[:id]
 		@student = Student.find(id)
-		@visits = @student.visits
+		@visits = @student.visits.order("created_at").reverse_order
 		@vis_lastweek = Visit.where(student_id:id).where(created_at: (1.week.ago)..Time.now).count
 		@vis_twoweeksago = Visit.where(student_id:id).where(created_at: (2.week.ago)..(1.week.ago)).count
 
@@ -66,8 +66,8 @@ class TeachersController < ApplicationController
 		##	seconds = seconds + 60
 		##end 
 		@response = @incident.task_text
-		@relateds_student = Visit.where(student_id:@student.id).where.not(id:id).last(3)
-		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id).where.not(id:id).last(3)
+		@relateds_student = Visit.where(student_id:@student.id).where.not(id:id).order("created_at").reverse_order.first(3)
+		@relateds_incident = Visit.where(reason_num:@incident.reason_num, student_id:@student.id).where.not(id:id).order("created_at").reverse_order.first(3)
 
 	end
 
