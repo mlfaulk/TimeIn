@@ -36,14 +36,14 @@
 #good {
 	background-color:#a0db8e;
 	float:left;
-	min-height: 220px;
+	min-height: 150px;
 
 }
 
 #bad {
 	float:left;
 	background-color:#db8ea0;
-	min-height: 220px;
+	min-height: 150px;
 
 }
 
