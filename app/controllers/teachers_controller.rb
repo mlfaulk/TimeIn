@@ -3,6 +3,9 @@ class TeachersController < ApplicationController
 		id = params[:id]
 		@student = Student.find(id)
 		@visits = @student.visits
+		@vis_lastweek = Visit.where(student_id:id).where(created_at: (1.week.ago)..Time.now).count
+		@vis_twoweeksago = Visit.where(student_id:id).where(created_at: (2.week.ago)..(1.week.ago)).count
+
 	end
 
 	def post_teacher_login()

@@ -49,10 +49,60 @@
             <% end %>
         </div>
         <div class="col-md-5">
-             <%= image_tag("graphic.png", class: "") %>
+            <p class="update-title center">Number of TimeIns</p>
+            <div id="placeholder" style="width:600px;height:300px">  </div>
             <div class="col-md-1"></div>
         </div>
     </div>
 
+    <script>
+    function barplot() {
+       var options = {
+            series: {
+                bars: { show: true, barWidth: 0.5, lineWidth: 0, fill:true, fillColor: "palegreen", label: {show:true}}
+            },
+            xaxis: {
+                min:0,
+                max:2,
+                tickSize:1, 
+                tickDecimals: 0,
+                axisLabel: 'This Week',
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+                axisLabelPadding: 5, 
+                ticks:[[.5,'This Week'],[1.5,'Last Week']]
+            },
+            yaxis: {
+                min:0,
+                ticksize:1,
+                tickDecimals: 0
+            }, 
+            grid: {
+                borderWidth: {top: 0, left:0, right:0, bottom:1}
+            }, 
+            legend: {
+                show:false
+            }
+        }
+        var data = [
+            { label: "This Week",
+              data: [ [.25, <%= @vis_lastweek %> ] ] 
+            },
+            { label: "Last Week",
+              data:[[1.25, <%= @vis_twoweeksago %> ]] 
+          }];
+
+        $.plot($("#placeholder"), data , options);
+
+    }
+
+
+
+    $( document ).ready(function() {
+        barplot();
+    });
+
+    </script>
 </div>
 
