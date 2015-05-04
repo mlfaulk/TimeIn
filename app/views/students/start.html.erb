@@ -2,19 +2,10 @@
 	<p class="login-btn green-text small-motto col-md-2">Teacher Login</p>
 
 	<div>
-		<a href="chill">
-			<p class="title motto blue-text" id="start_btn" >START</p>
-		</a>
-	</div>
-    <div class="row filler"></div>
-    <div class="row filler"></div>
-    <div class="row filler"></div>
-    <div class="row filler"></div>
-    <div class="row filler"></div>
-    
-
-
-	<div id="login-box" class="login-popup container col-md-4">
+			<p class="title motto blue-text" id="start_btn" >
+				<%= link_to "START", controller: "students", action: "chill"%>
+			</p>
+			<div id="login-box" class="login-popup container col-md-4">
 		<div class="teacher-icon">
 	        <%= image_tag("teacher_icon.png") %>
 		</div>
@@ -41,6 +32,11 @@
 
 
 	</div>
+	</div>
+    
+
+
+
 
 	<script type="text/javascript">
 		$(document).ready(function() {
