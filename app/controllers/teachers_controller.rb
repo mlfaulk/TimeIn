@@ -19,7 +19,7 @@ class TeachersController < ApplicationController
 			if password_attempt == user.password then
 
 				#log in returning user
-				session[:current_user_id] = user.id
+				#session[:current_user_id] = user.id
 				redirect_to action: "admin_dashboard"
 			else
 				redirect_to controller:"students", action: "start"
