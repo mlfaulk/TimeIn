@@ -6,7 +6,9 @@
             </div>
             <div class="col-md-10"></div>
             <div class="col-md-1">
-                <p class="center green-text tiny-logo">Logout</p>
+                <p class="center green-text tiny-logo">
+                <%= link_to "Logout", controller: "students", action: "start" %>
+                </p>
             </div>
     </div>
     
@@ -52,9 +54,12 @@
             <% end %>
         </div>
         <div class="col-md-5">
+            <% if @visits.length!=0 %>
+
             <p class="update-title center">Number of TimeIns</p>
             <div id="placeholder" style="width:500px;height:300px">  </div>
             <div class="col-md-1"></div>
+            <% end %>
         </div>
     </div>
 
