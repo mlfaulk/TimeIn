@@ -6,6 +6,8 @@ class TeachersController < ApplicationController
 		@vis_lastweek = Visit.where(student_id:id).where(created_at: (1.week.ago)..Time.now).count
 		@vis_twoweeksago = Visit.where(student_id:id).where(created_at: (2.week.ago)..(1.week.ago)).count
 
+		mostcommon = @visits.map(&:reason_num).group_by(&:to_s).values.max_by(&:size).try(:first)
+		@mostcommonvisit = @visits.find_by(reason_num: mostcommon)
 	end
 
 	def post_teacher_login()

@@ -23,7 +23,9 @@
         <div class="col-md-6">
             <div class="row filler-small"></div>
             <p class="student-title shift-slight-right"><%= @student.firstname %> <%= @student.lastname %></p>
-            <p class="student-desc shift-slight-right"><%= @student.firstname %> is in 3rd grade. In the last two weeks, <%= @student.gender_pronoun() %> has had <%= @vis_lastweek + @vis_twoweeksago%> TimeIns</p>
+            <p class="student-desc shift-slight-right"><%= @student.firstname %> is in 3rd grade.</p>
+            <p class="student-desc shift-slight-right"> In the last two weeks, <%= @student.gender_pronoun() %> has had <%= @vis_lastweek + @vis_twoweeksago%> TimeIns </p>
+            <p class="student-desc shift-slight-right"> Most commmon reason for a TimeIn: <%= @mostcommonvisit.get_reason() %> </p>
             <div class="col-md-1"></div>
         </div>
     </div>
