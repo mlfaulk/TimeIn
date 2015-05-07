@@ -98,7 +98,7 @@
                     <div class="row small-filler"></div>
                     <% end %>
                     <% if @relateds_student.length==0 %>
-                        <p class="zero">No recent incidents to display</p>
+                        <p class="zero"><%= @student.firstname %> has no other TimeIns from this week %></p>
                     <% end %>
                 </div>
                 <div class="col-md-1"></div>
@@ -117,7 +117,7 @@
                     <div class="row small-filler"></div>
                     <% end %>
                     <% if @relateds_incident.length==0 %>
-                        <p class="zero">No related incidents to display<p>
+                        <p class="zero"><%= @student.firstname %> has no other TimeIns where <%= @student.gender_pronoun() %> <%= @incident.get_reason() %></p>
                     <% end %>
                 </div>
                 <div class="col-md-1"></div>
