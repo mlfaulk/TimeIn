@@ -406,8 +406,12 @@ a {
     color: white;
     text-decoration:none;
 }
-a.arrow-scroll:hover, a.arrow-scroll:focus {
+a.arrow-scroll:hover {
     background-color: coral; 
+    text-decoration: none;
+    color: white;
+}
+a.arrow-scroll:focus {
     text-decoration: none;
     color: white;
 }
