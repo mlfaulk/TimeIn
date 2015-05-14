@@ -49,6 +49,9 @@ gem 'spring',        group: :development
 #Flot 
 gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
 
+#Twilio, for texting
+gem 'twilio-ruby'
+
 # Enable ActiveRecord session store
 gem 'activerecord-session_store'
 
