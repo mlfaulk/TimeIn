@@ -156,7 +156,7 @@ class StudentsController < ApplicationController
 
 		account_sid = 'ACeeff1afe4b8a88ddbba302313d60dc73' 
 		auth_token = 'f9af84b19b5aa007e4ed6b11abc943a5' 
-		message = "#{@student.firstname} just completed a TimeIn. She wrote '#{@text}' for her task response."
+		message = "#{@student.firstname} just completed a TimeIn. #{@student.firstname} wrote '#{@text}' for the task response."
 		if num_today > 1 
 			message+=" NOTICE: #{@student.firstname} has had 2+ TimeIns today"
 		end
