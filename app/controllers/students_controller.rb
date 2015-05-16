@@ -142,8 +142,6 @@ class StudentsController < ApplicationController
 		student_id = session[:current_user_id]
 		@student = Student.find(student_id)
 		@name = @student.firstname
-		
-
 		visit_id = @student.current_visit_id
 		@visit = Visit.find(visit_id)
 		@visit.end_time = Time.now
@@ -153,8 +151,20 @@ class StudentsController < ApplicationController
 
 		reason_num = @student.current_reason_num
 
-		##ModelMailer.new_record_notification(@name).deliver
-
+		account_sid = 'ACeeff1afe4b8a88ddbba302313d60dc73' 
+		auth_token = 'f9af84b19b5aa007e4ed6b11abc943a5' 
+		begin
+		# set up a client to talk to the Twilio REST API 
+		@client = Twilio::REST::Client.new account_sid, auth_token 
+		 
+		@client.account.messages.create({
+			:from => '+14694163921', 
+			:to => '2146423603', 
+			:body => "#{@student.firstname} just completed a TimeIn",  
+		})
+		rescue Twilio::REST::RequestError => e
+		    puts e.message
+		end
 	end
 
 	def end()
