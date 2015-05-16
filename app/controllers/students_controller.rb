@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
 
 
-
+	include ActionView::Helpers::DateHelper
 	def post_login()
 		firstname = params[:student_name]
 
@@ -151,8 +151,16 @@ class StudentsController < ApplicationController
 
 		reason_num = @student.current_reason_num
 
+		num_today = Visit.where(student_id:student_id).where(created_at: (Date.today)..(Date.today+1)).count
+
+
 		account_sid = 'ACeeff1afe4b8a88ddbba302313d60dc73' 
 		auth_token = 'f9af84b19b5aa007e4ed6b11abc943a5' 
+		message = "#{@student.firstname} just completed a TimeIn. She wrote '#{@text}' for her task response."
+		if num_today > 1 
+			message+=" NOTICE: #{@student.firstname} has had 2+ TimeIns today"
+		end
+
 		begin
 		# set up a client to talk to the Twilio REST API 
 		@client = Twilio::REST::Client.new account_sid, auth_token 
@@ -160,7 +168,7 @@ class StudentsController < ApplicationController
 		@client.account.messages.create({
 			:from => '+14694163921', 
 			:to => '2146423603', 
-			:body => "#{@student.firstname} just completed a TimeIn",  
+			:body => message
 		})
 		rescue Twilio::REST::RequestError => e
 		    puts e.message
