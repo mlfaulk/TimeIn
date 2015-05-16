@@ -10,22 +10,6 @@ class TeachersController < ApplicationController
 
 		mostcommon = @visits.map(&:reason_num).group_by(&:to_s).values.max_by(&:size).try(:first)
 		@mostcommonvisit = @visits.find_by(reason_num: mostcommon)
-	 
-	
-		account_sid = 'ACeeff1afe4b8a88ddbba302313d60dc73' 
-		auth_token = 'f9af84b19b5aa007e4ed6b11abc943a5' 
-		begin
-		# set up a client to talk to the Twilio REST API 
-		@client = Twilio::REST::Client.new account_sid, auth_token 
-		 
-		@client.account.messages.create({
-			:from => '+14694163921', 
-			:to => '2146423603', 
-			:body => 'Hello world!',  
-		})
-		rescue Twilio::REST::RequestError => e
-		    puts e.message
-		end
 	
 	end
 
