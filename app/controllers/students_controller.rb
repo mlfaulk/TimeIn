@@ -82,20 +82,6 @@ class StudentsController < ApplicationController
 		@name = student.firstname
 	end
 
-	def post_char_def()
-		input = params[:input]
-		if (input == "character") then
-			@invalid = false
-			redirect_to action: "strength", id: params[:id]
-			#redirect with id
-		else
-			@invalid = true
-			redirect_to action: "character", id: params[:id]
-		end
-
-	end
-
-
 	def learn()
 		@student_id = params[:id]
 		student = Student.find(@student_id)

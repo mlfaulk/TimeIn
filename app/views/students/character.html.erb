@@ -89,21 +89,25 @@
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-                    <div class="row filler-small"></div>
+               
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <form name="char_form" action="/students/post_char_def/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
-                            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                            <input type="text" class="medium_box blue-text center-block rounded" name="input">
-                            <input type="submit" class="tiny-motto orange-text" value="Submit">
-                            </form>
+                            <p class="small-desc blue-text" id="nullError"> Oops!  You must type the word 'character' before you may continue. </p>
+                            <p class="small-desc blue-text" id="spellingError"> Oops!  It appears you've misspelled 'character'.  Try again! </p>
+                            
                             
                             
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-                    <div class="row filler"></div>
+            
+                            <form name="char_form" action="/students/strength/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
+                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                                <input type="text" class="medium_box blue-text center-block rounded" name="input">
+                                <input type="submit" class="tiny-motto orange-text" value="Submit">
+                            </form>
+
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
@@ -134,11 +138,15 @@
 function validateCharForm() {
     var input = document.forms["char_form"]["input"].value;
     if (input == null || input == "") {
-        alert("Oops!  You must type the word 'character' before you may continue.");
+        document.getElementById("nullError").style.visibility = "visible";
+        document.getElementById("spellingError").style.visibility = "hidden";
+        //alert("Oops!  You must type the word 'character' before you may continue.");
         return false;
     }
     if (input != 'character') {
-        alert("Oops!  It appears you've misspelled 'character'.  Try again!")
+        document.getElementById("spellingError").style.visibility = "visible";
+        document.getElementById("nullError").style.visibility = "hidden";
+        //alert("Oops!  It appears you've misspelled 'character'.  Try again!")
         return false;
     }
 }
