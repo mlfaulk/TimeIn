@@ -143,7 +143,7 @@ function validateCharForm() {
         //alert("Oops!  You must type the word 'character' before you may continue.");
         return false;
     }
-    if (input != 'character') {
+    if (input.toLowerCase() != 'character') {
         document.getElementById("spellingError").style.visibility = "visible";
         document.getElementById("nullError").style.visibility = "hidden";
         //alert("Oops!  It appears you've misspelled 'character'.  Try again!")
