@@ -85,7 +85,7 @@
                            
                          
     
-                            <p class="large-desc blue-text">Type the word <b>character</b> here:</p>
+                            <p class="large-desc blue-text">Take the <b>character</b> quiz!</p>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
@@ -101,18 +101,40 @@
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-            
+                        
                             <form name="char_form" action="/students/strength/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
                                 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                                <input type="text" class="medium_box blue-text center-block rounded" name="input">
+                                <p class="large-desc blue-text"><b>Step 1:</b>  Type the word <b>'character'</b> here:<input autocomplete="off" type="text" class="medium_box blue-text center-block rounded" name="input"></p><br>
+                                
+                                <p class="large-desc blue-text">
+                                    <b>Step 2:</b>  Check all the words that describe <b>good character</b>:
+                                </p>
+                                <p class="small-desc blue-text" id="checkboxError"> Oops!  That is not the correct answer.  Try again! </p>
+
+                                <p class="small-desc blue-text">
+                                <br>
+                                <input id= "optimism_check" type="checkbox" name="word" value="Optimism">  Optimism
+                                <br>
+                                <input id= "jealousy_check" type="checkbox" name="word" value="Jealousy">  Jealousy
+                                <br>
+                                <input id= "resilience_check" type="checkbox" name="word" value="Resilience">  Resilience 
+                                <br>
+                                <input id= "anger_check" type="checkbox" name="word" value="Anger">  Anger
+                                <br>
+                                <input id= "empathy_check" type="checkbox" name="word" value="Empathy">  Empathy
+                                <br>
+                                <input id= "selfcontrol_check" type="checkbox" name="word" value="Self-Control">  Self-Control
+                                <br><br>
                                 <input type="submit" class="tiny-motto orange-text" value="Submit">
+                                </p>
+
                             </form>
+                        
 
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
 
-    
 
                         </div>
                         <div class="col-md-3"></div>
@@ -135,19 +157,40 @@
 </div>
 
 <script>
+
 function validateCharForm() {
     var input = document.forms["char_form"]["input"].value;
-    if (input == null || input == "") {
-        document.getElementById("nullError").style.visibility = "visible";
-        document.getElementById("spellingError").style.visibility = "hidden";
-        //alert("Oops!  You must type the word 'character' before you may continue.");
-        return false;
+
+    if (input.toLowerCase() == 'character') {
+        if ((document.getElementById("optimism_check").checked == true) && (document.getElementById("jealousy_check").checked == false) && (document.getElementById("resilience_check").checked == true) && (document.getElementById("anger_check").checked == false) && (document.getElementById("empathy_check").checked == true) && (document.getElementById("selfcontrol_check").checked == true)){
+            //all answers are correct
+            return true;
+        }
     }
+    //there is some mistake
+
+    //if there's a mistake is in the character box:
     if (input.toLowerCase() != 'character') {
-        document.getElementById("spellingError").style.visibility = "visible";
-        document.getElementById("nullError").style.visibility = "hidden";
-        //alert("Oops!  It appears you've misspelled 'character'.  Try again!")
+        //if nothing is typed:
+        if (input == null || input == "") {
+            document.getElementById("nullError").style.visibility = "visible";
+            document.getElementById("spellingError").style.visibility = "hidden";
+        } else {        //spelling error
+            document.getElementById("spellingError").style.visibility = "visible";
+            document.getElementById("nullError").style.visibility = "hidden";
+        }
         return false;
     }
+
+    //character box is correct so get rid of those errors
+    document.getElementById("spellingError").style.visibility = "hidden";
+    document.getElementById("nullError").style.visibility = "hidden";
+
+    //if there's a mistake in the checkboxes:
+    if ((document.getElementById("optimism_check").checked == false) || (document.getElementById("jealousy_check").checked == true) || (document.getElementById("resilience_check").checked == false) || (document.getElementById("anger_check").checked == true) || (document.getElementById("empathy_check").checked == false) || (document.getElementById("selfcontrol_check").checked == false)) {
+        document.getElementById("checkboxError").style.visibility = "visible";
+    }
+
+    return false;
 }
 </script>

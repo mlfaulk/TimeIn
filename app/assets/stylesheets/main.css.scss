@@ -760,6 +760,12 @@ a.action-step:hover {}
     color: rgba(227, 138, 120, 1);
 }
 
+
+#checkboxError {
+    visibility: hidden;
+    color: rgba(227, 138, 120, 1);
+}
+
 .drop-hover {
      opacity: 0.4;
 }
