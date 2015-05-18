@@ -93,11 +93,8 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <p class="small-desc blue-text" id="nullError"> Oops!  You must type the word 'character' before you may continue. </p>
-                            <p class="small-desc blue-text" id="spellingError"> Oops!  It appears you've misspelled 'character'.  Try again! </p>
-                            
-                            
-                            
+                            <p class="small-desc blue-text" id="charError"></p>
+                              
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -109,7 +106,7 @@
                                 <p class="large-desc blue-text">
                                     <b>Step 2:</b>  Check all the words that describe <b>good character</b>:
                                 </p>
-                                <p class="small-desc blue-text" id="checkboxError"> Oops!  That is not the correct answer.  Try again! </p>
+                                <p class="small-desc blue-text" id="checkboxError"></p>
 
                                 <p class="small-desc blue-text">
                                 <br>
@@ -159,7 +156,9 @@
 <script>
 
 function validateCharForm() {
+    console.log("in validate fxn");
     var input = document.forms["char_form"]["input"].value;
+
 
     if (input.toLowerCase() == 'character') {
         if ((document.getElementById("optimism_check").checked == true) && (document.getElementById("jealousy_check").checked == false) && (document.getElementById("resilience_check").checked == true) && (document.getElementById("anger_check").checked == false) && (document.getElementById("empathy_check").checked == true) && (document.getElementById("selfcontrol_check").checked == true)){
@@ -167,30 +166,42 @@ function validateCharForm() {
             return true;
         }
     }
+    
     //there is some mistake
 
-    //if there's a mistake is in the character box:
+    //if the mistake is in the character box:
     if (input.toLowerCase() != 'character') {
         //if nothing is typed:
         if (input == null || input == "") {
-            document.getElementById("nullError").style.visibility = "visible";
-            document.getElementById("spellingError").style.visibility = "hidden";
+            document.getElementById("charError").innerHTML = "Oops!  You must type the word 'character' before you may continue.";       
         } else {        //spelling error
-            document.getElementById("spellingError").style.visibility = "visible";
-            document.getElementById("nullError").style.visibility = "hidden";
+            document.getElementById("charError").innerHTML = "Oops!  It appears you've misspelled 'character'.  Try again!";
         }
+        document.getElementById("charError").style.visibility = "visible";
+        //mistake is not in the checkboxes so get rid of that error
+        document.getElementById("checkboxError").style.visibility = "hidden";
         return false;
-    }
+    } 
+    console.log("mistake is in checkboxes.  character spelled correctly");
+    
 
-    //character box is correct so get rid of those errors
-    document.getElementById("spellingError").style.visibility = "hidden";
-    document.getElementById("nullError").style.visibility = "hidden";
+    //character word is correct so get rid of those errors
+    //document.getElementById("spellingError").style.visibility = "hidden";
+    //document.getElementById("nullError").style.visibility = "hidden";
+
+    
 
     //if there's a mistake in the checkboxes:
-    if ((document.getElementById("optimism_check").checked == false) || (document.getElementById("jealousy_check").checked == true) || (document.getElementById("resilience_check").checked == false) || (document.getElementById("anger_check").checked == true) || (document.getElementById("empathy_check").checked == false) || (document.getElementById("selfcontrol_check").checked == false)) {
-        document.getElementById("checkboxError").style.visibility = "visible";
+    //if none are checked:
+    if ((document.getElementById("optimism_check").checked == false) && (document.getElementById("jealousy_check").checked == false) && (document.getElementById("resilience_check").checked == false) && (document.getElementById("anger_check").checked == false) && (document.getElementById("empathy_check").checked == false) && (document.getElementById("selfcontrol_check").checked == false)) {
+        document.getElementById("checkboxError").innerHTML = "Oops!  You must check the correct boxes before you may continue.";
+    } else {
+        //if the wrong ones are checked:
+        document.getElementById("checkboxError").innerHTML = "Oops!  That is not the correct answer.  Try again!";
     }
-
+    document.getElementById("checkboxError").style.visibility = "visible";
+    //character word is correct so get rid of those errors
+    document.getElementById("charError").style.visibility = "hidden";
     return false;
 }
 </script>
