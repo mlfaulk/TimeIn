@@ -82,7 +82,10 @@
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <p class="large-desc blue-text">Please write down what <b>character</b> is!</p>
+                           
+                         
+    
+                            <p class="large-desc blue-text">Type the word <b>character</b> here:</p>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
@@ -90,7 +93,13 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <textarea class="large_box blue-text center-block rounded" type="text"></textarea>
+                            <form name="char_form" action="/students/post_char_def/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
+                            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                            <input type="text" class="medium_box blue-text center-block rounded" name="input">
+                            <input type="submit" class="tiny-motto orange-text" value="Submit">
+                            </form>
+                            
+                            
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -98,8 +107,9 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                           
-                            <p class="tiny-motto orange-text"><%= link_to "Submit", { controller: "students", action: "strength", id: params[:id] }, class: "tiny-motto orange-text no-underline" %></p>
+
+    
+
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -119,3 +129,17 @@
     </div>
     </div>
 </div>
+
+<script>
+function validateCharForm() {
+    var input = document.forms["char_form"]["input"].value;
+    if (input == null || input == "") {
+        alert("Oops!  You must type the word 'character' before you may continue.");
+        return false;
+    }
+    if (input != 'character') {
+        alert("Oops!  It appears you've misspelled 'character'.  Try again!")
+        return false;
+    }
+}
+</script>

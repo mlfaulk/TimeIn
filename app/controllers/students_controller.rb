@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+	include ActionView::Helpers::DateHelper
+
 	def start()
 	end
 
@@ -15,7 +18,6 @@ class StudentsController < ApplicationController
 
 
 
-	include ActionView::Helpers::DateHelper
 	def post_login()
 		firstname = params[:student_name]
 
@@ -79,6 +81,20 @@ class StudentsController < ApplicationController
 		student = Student.find(@student_id)
 		@name = student.firstname
 	end
+
+	def post_char_def()
+		input = params[:input]
+		if (input == "character") then
+			@invalid = false
+			redirect_to action: "strength", id: params[:id]
+			#redirect with id
+		else
+			@invalid = true
+			redirect_to action: "character", id: params[:id]
+		end
+
+	end
+
 
 	def learn()
 		@student_id = params[:id]
