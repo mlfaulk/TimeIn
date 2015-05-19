@@ -8,6 +8,7 @@ class CreateVisits < ActiveRecord::Migration
                                 # For example, 1="Spoke when he/she was supposed to be quiet."
     	t.string	:task_choice    # either "teacher", "freewrite", or "promise"
     	t.text		:task_text
+      t.text    :what_happened_text   #response to "what just happened?" prompt
       t.timestamps
     end
   end
