@@ -101,19 +101,15 @@
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-            
-                            <form name="char_form" action="/students/strength/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
-                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                                <input type="text" class="medium_box blue-text center-block rounded" name="input">
-                                <input type="submit" class="tiny-motto orange-text" value="Submit">
-                            </form>
-
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-
-    
-
+                            <form name="char_form" action="/students/strength/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
+                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                                <input type="text" class="medium_box default_font center-block rounded" name="input" autocomplete="off">
+                                <div class="row filler"></div>
+                                <input type="submit" class="submit rounded tiny-motto orange-text" value="Submit">
+                            </form>
                         </div>
                         <div class="col-md-3"></div>
                     </div>

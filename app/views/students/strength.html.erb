@@ -90,34 +90,36 @@
 
                             <!--Gallery of character scenarios-->
                             <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
                                     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-                                      <li class="ui-widget-content ui-corner-tr scens col-md-2">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <h5 class="ui-widget-header words">Peeta gives bread to Katniss</h5>
                                          <%= image_tag("scen1.jpg", class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens col-md-2">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <h5 class="ui-widget-header words">Suzy and Brian comfort Tim when he's crying</h5>
                                          <%= image_tag("scen2.jpg", class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens col-md-2">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <h5 class="ui-widget-header words">Cam coaches Manny in football</h5>
                                          <%= image_tag("scen3.jpg", class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens col-md-2">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <h5 class="ui-widget-header words">Francis stuffs Timmy in a locker</h5>
                                          <%= image_tag("scen4.jpg", class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens col-md-2">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <p class="ui-widget-header words">Spongebob and Patrick steal a balloon</p>
                                          <%= image_tag("scen6.jpg", class: "rawimg") %>
                                       </li>
 
                                     </ul>
                                 </div>
-                                <div class="col-md-2"></div>
+                                <div class="col-md-1"></div>
                             </div>
+                            
+                            <div class="row filler-small"></div>
 
                             <!--Good and bad character boxes*/-->
                             <div id="char" class="row">
@@ -167,13 +169,13 @@
 
   });
     
-    window.onload = function() { 
-        if(!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
-        }
-    }
-    window.onload();
+//    window.onload = function() { 
+//        if(!window.location.hash) {
+//            window.location = window.location + '#loaded';
+//            window.location.reload();
+//        }
+//    }
+//    window.onload();
 
   $(function() {
     // there's the gallery and the trash
