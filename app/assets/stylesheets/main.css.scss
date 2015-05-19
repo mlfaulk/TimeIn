@@ -764,12 +764,13 @@ a.action-step:hover {}
 
 }
 
-#nullError {
+#charError {
     visibility: hidden;
     color: rgba(227, 138, 120, 1);
 }
 
-#spellingError {
+
+#checkboxError {
     visibility: hidden;
     color: rgba(227, 138, 120, 1);
 }

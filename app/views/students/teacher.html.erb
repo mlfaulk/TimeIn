@@ -37,12 +37,13 @@
                 <div class="col-md-10">
                     <p class="tiny-motto blue-text">Send a Message to Your Teacher!</p>
                     <p class="desc">Is there something you want to say to your teacher about what just happened? You can say that you are sorry or explain how you are feeling! </p>
+                    
                 </div>
                 <div class="col-md-1"></div>
         </div>
 
         
-        <%= form_tag(controller: "students", action: "post_task", method: "post") do %>
+        <%= form_tag(controller: "students", action: "post_teacher", id: params[:id], method: "post") do %>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
