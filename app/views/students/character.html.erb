@@ -82,24 +82,57 @@
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <p class="large-desc blue-text">Please write down what <b>character</b> is!</p>
+                           
+                         
+    
+                            <p class="large-desc blue-text">Take the <b>character</b> quiz!</p>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-                    <div class="row filler-small"></div>
+               
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <textarea class="large_box blue-text center-block rounded" type="text"></textarea>
+                            <p class="small-desc blue-text" id="charError"></p>
+                              
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-                    <div class="row filler"></div>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                           
-                            <p class="tiny-motto orange-text"><%= link_to "Submit", { controller: "students", action: "strength", id: params[:id] }, class: "tiny-motto orange-text no-underline" %></p>
+                            <form name="char_form" action="/students/strength/<%= @student_id %>" onsubmit="return validateCharForm()" method="post">
+                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                                <p class="large-desc blue-text"><b>Step 1:</b>  Type the word <b>'character'</b> here:<input autocomplete="off" type="text" class="medium_box default_font center-block rounded" name="input" autocomplete="off"></p><br>
+                                
+                                <p class="large-desc blue-text">
+                                    <b>Step 2:</b>  Check all the words that describe <b>good character</b>:
+                                </p>
+                                <p class="small-desc blue-text" id="checkboxError"></p>
+
+                                <p class="small-desc blue-text">
+                                <br>
+                                <input id= "optimism_check" type="checkbox" name="word" value="Optimism">  Optimism
+                                <br>
+                                <input id= "jealousy_check" type="checkbox" name="word" value="Jealousy">  Jealousy
+                                <br>
+                                <input id= "resilience_check" type="checkbox" name="word" value="Resilience">  Resilience 
+                                <br>
+                                <input id= "anger_check" type="checkbox" name="word" value="Anger">  Anger
+                                <br>
+                                <input id= "empathy_check" type="checkbox" name="word" value="Empathy">  Empathy
+                                <br>
+                                <input id= "selfcontrol_check" type="checkbox" name="word" value="Self-Control">  Self-Control
+                                <br><br>
+                                <input type="submit" class="submit rounded tiny-motto orange-text" value="Submit">
+                                </p>
+
+                            </form>
+                        
+
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -119,3 +152,56 @@
     </div>
     </div>
 </div>
+
+<script>
+
+function validateCharForm() {
+    console.log("in validate fxn");
+    var input = document.forms["char_form"]["input"].value;
+
+
+    if (input.toLowerCase() == 'character') {
+        if ((document.getElementById("optimism_check").checked == true) && (document.getElementById("jealousy_check").checked == false) && (document.getElementById("resilience_check").checked == true) && (document.getElementById("anger_check").checked == false) && (document.getElementById("empathy_check").checked == true) && (document.getElementById("selfcontrol_check").checked == true)){
+            //all answers are correct
+            return true;
+        }
+    }
+    
+    //there is some mistake
+
+    //if the mistake is in the character box:
+    if (input.toLowerCase() != 'character') {
+        //if nothing is typed:
+        if (input == null || input == "") {
+            document.getElementById("charError").innerHTML = "Oops!  You must type the word 'character' before you may continue.";       
+        } else {        //spelling error
+            document.getElementById("charError").innerHTML = "Oops!  It appears you've misspelled 'character'.  Try again!";
+        }
+        document.getElementById("charError").style.visibility = "visible";
+        //mistake is not in the checkboxes so get rid of that error
+        document.getElementById("checkboxError").style.visibility = "hidden";
+        return false;
+    } 
+    console.log("mistake is in checkboxes.  character spelled correctly");
+    
+
+    //character word is correct so get rid of those errors
+    //document.getElementById("spellingError").style.visibility = "hidden";
+    //document.getElementById("nullError").style.visibility = "hidden";
+
+    
+
+    //if there's a mistake in the checkboxes:
+    //if none are checked:
+    if ((document.getElementById("optimism_check").checked == false) && (document.getElementById("jealousy_check").checked == false) && (document.getElementById("resilience_check").checked == false) && (document.getElementById("anger_check").checked == false) && (document.getElementById("empathy_check").checked == false) && (document.getElementById("selfcontrol_check").checked == false)) {
+        document.getElementById("checkboxError").innerHTML = "Oops!  You must check the correct boxes before you may continue.";
+    } else {
+        //if the wrong ones are checked:
+        document.getElementById("checkboxError").innerHTML = "Oops!  That is not the correct answer.  Try again!";
+    }
+    document.getElementById("checkboxError").style.visibility = "visible";
+    //character word is correct so get rid of those errors
+    document.getElementById("charError").style.visibility = "hidden";
+    return false;
+}
+</script>

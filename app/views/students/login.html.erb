@@ -29,37 +29,93 @@
                 <div class="col-md-2"></div>
         </div>
         
+    
+        <!-- SCROLL BAR -->
+        <div class="wrapper">
+        <div class="jcarousel-wrapper">
+            <div class="jcarousel">
+                <ul class="scroll">
+                    <li class="scroll">
+                        <div class="scroll-box">
         
-        <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <p class="title motto orange-text">Check In</p>
-                    <p class="desc">You are sitting in the recovery chair, which means you were disruptive in class. Now, you need to take responsibility.</p>
-                </div>
-                <div class="col-md-2"></div>
-        </div>
-        <div class="row filler"></div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 center">
+                            <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <p class="title motto orange-text">Check In</p>
+                                        <p class="desc">You are sitting in the recovery chair, which means you were disruptive in class. Now, you need to take responsibility.</p>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                            </div>
+                            <div class="row filler"></div>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6 center">
 
-                
 
-                <%= form_tag("post_login", method: "post") do %>
-                    <p class="prompt center"><b>Hello, my name is </b><font color="black">
 
-                        <%= select_tag(:student_name, options_for_select(@namesArray))%>
+                                    <%= form_tag("post_login", method: "post") do %>
+                                        <p class="prompt center"><b>Hello, my name is </b><font color="black">
 
-                    </font></p>
-                    <p class="prompt-black inline"><b class="prompt">I am here because</b>
+                                            <%= select_tag(:student_name, options_for_select(@namesArray))%>
 
-                    <%= select_tag(:reason_num, options_for_select([['I spoke when I was supposed to be quiet.', 1], ['I used a curse word.', 2], ['I was mean to a classmate.', 3], ['I was disruptive to the class.', 4],['I was disrespectful.', 5], ['I was violent in class.', 6], ['I did something else that is against the rules', 7]]))%></p><br>
+                                        </font></p>
+                                        <p class="prompt-black inline"><b class="prompt">I am here because</b>
 
-                    <div class="row filler"></div>
-                    <p class="submit rounded orange-text"><%= submit_tag("Submit") %></p>
-                <% end %>
+                                        <%= select_tag(:reason_num, options_for_select([['I spoke when I was supposed to be quiet.', 1], ['I used a curse word.', 2], ['I was mean to a classmate.', 3], ['I was disruptive to the class.', 4],['I was disrespectful.', 5], ['I was violent in class.', 6], ['I did something else that is against the rules', 7]]))%></p><br>
+
+                                        <div class="row filler"></div>
+                                        
+                                    
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="scroll">
+                        <div class="scroll-box">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="tiny-motto blue-text">What just happened?</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <textarea class="rounded"></textarea>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <div class="row filler"></div>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <p class="submit rounded orange-text"><%= submit_tag("Submit") %></p>
+                                    <% end %>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-3"></div>
-        </div>
+            <a href="#" class="jcarousel-control-prev arrow-scroll">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next arrow-scroll">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
+        </div>  
+    </div>
+    
 
 </div>
+
+
+<script type="text/javascript">
+
+    window.onload = function() { 
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
+    window.onload();
+    
+</script>

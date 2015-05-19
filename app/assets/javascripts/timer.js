@@ -7,9 +7,7 @@ function appearNextButton() {
 	
 	testbtn.style.visibility="hidden";
 	btn.style.visibility = "visible";
-	console.log("in fxn");
-	//var div = document.getElementById("timer_div");
-	//div.innerHTML = "<a href="login"><p class="small-motto orange-text" id="chillPageNextBtn">NEXT</p></a>";
+	
 }
 
 function updateTimer() {

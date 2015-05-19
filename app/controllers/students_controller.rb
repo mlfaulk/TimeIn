@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+	include ActionView::Helpers::DateHelper
+
 	def start()
 	end
 
@@ -15,7 +18,6 @@ class StudentsController < ApplicationController
 
 
 
-	include ActionView::Helpers::DateHelper
 	def post_login()
 		firstname = params[:student_name]
 
@@ -30,7 +32,6 @@ class StudentsController < ApplicationController
 			new_student.current_reason_num = params[:reason_num]
 
 			if new_student.save then
-				session[:current_user_id] = new_student.id
 				#create new visit
 				new_visit = Visit.new
 				new_visit.student_id = new_student.id
@@ -46,7 +47,6 @@ class StudentsController < ApplicationController
 			end
 		else
 			#log in returning student
-			session[:current_user_id] = student.id
 			#create new visit
 			new_visit = Visit.new
 			new_visit.student_id = student.id
@@ -71,6 +71,10 @@ class StudentsController < ApplicationController
 		@student_id = params[:id]
 		student = Student.find(@student_id)
 		@name = student.firstname
+
+		resources = Resource.all
+		@char_scenarios = resources.sample(5)
+
 	end
 
 
@@ -86,15 +90,40 @@ class StudentsController < ApplicationController
 		@name = student.firstname
 	end
 
-	def post_task()
-		student_id = session[:current_user_id]
+	def post_teacher()
+		if (params[:text] == nil) || (params[:text] == "") then
+			redirect_to action: "teacher", id: params[:id]
+			return
+		end
+		post_task(params[:id])
+	end
+
+	def post_freewrite()
+		if (params[:text] == nil) || (params[:text] == "") then
+			redirect_to action: "freewrite", id: params[:id]
+			return
+		end
+		post_task(params[:id])
+	end
+
+	def post_promise()
+		if (params[:text] == nil) || (params[:text] == "") then
+			redirect_to action: "promise", id: params[:id]
+			return
+		end
+		post_task(params[:id])
+	end
+
+	def post_task(student_id)
 		student = Student.find(student_id)
 		visit_id = student.current_visit_id
 		visit = Visit.find(visit_id)
 		visit.task_text = params[:text]
 		visit.save
-		redirect_to action: "finish"
+		redirect_to action: "finish", id: student_id
 	end
+
+
 
 	def teacher()
 		@student_id = params[:id]
@@ -102,8 +131,6 @@ class StudentsController < ApplicationController
 		@name = student.firstname
 
 		#update task choice
-		student_id = session[:current_user_id]
-		student = Student.find(student_id)
 		visit_id = student.current_visit_id
 		visit = Visit.find(visit_id)
 		visit.task_choice = "teacher"
@@ -116,8 +143,6 @@ class StudentsController < ApplicationController
 		@name = student.firstname
 
 		#update task choice
-		student_id = session[:current_user_id]
-		student = Student.find(student_id)
 		visit_id = student.current_visit_id
 		visit = Visit.find(visit_id)
 		visit.task_choice = "freewrite"
@@ -130,8 +155,6 @@ class StudentsController < ApplicationController
 		@name = student.firstname
 		
 		#update task choice
-		student_id = session[:current_user_id]
-		student = Student.find(student_id)
 		visit_id = student.current_visit_id
 		visit = Visit.find(visit_id)
 		visit.task_choice = "promise"
@@ -139,7 +162,7 @@ class StudentsController < ApplicationController
 	end
 
 	def finish() 
-		student_id = session[:current_user_id]
+		student_id = params[:id]
 		@student = Student.find(student_id)
 		@name = @student.firstname
 		visit_id = @student.current_visit_id
@@ -176,7 +199,6 @@ class StudentsController < ApplicationController
 	end
 
 	def end()
-		reset_session
 		redirect_to action: "start"
 	end
 
