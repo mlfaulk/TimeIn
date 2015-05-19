@@ -73,6 +73,10 @@ class StudentsController < ApplicationController
 		@student_id = params[:id]
 		student = Student.find(@student_id)
 		@name = student.firstname
+
+		resources = Resource.all
+		@char_scenarios = resources.sample(5)
+
 	end
 
 

@@ -94,24 +94,24 @@
                                 <div class="col-md-8">
                                     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
                                       <li class="ui-widget-content ui-corner-tr scens col-md-2">
-                                        <h5 class="ui-widget-header words">Peeta gives bread to Katniss</h5>
-                                         <%= image_tag("scen1.jpg", class: "rawimg") %>
+                                        <h5 class="ui-widget-header words"><%= @char_scenarios[0].caption %></h5>
+                                         <%= image_tag(@char_scenarios[0].char_scen_img_file, class: "rawimg") %>
                                       </li>
                                       <li class="ui-widget-content ui-corner-tr scens col-md-2">
-                                        <h5 class="ui-widget-header words">Suzy and Brian comfort Tim when he's crying</h5>
-                                         <%= image_tag("scen2.jpg", class: "rawimg") %>
+                                        <h5 class="ui-widget-header words"><%= @char_scenarios[1].caption %></h5>
+                                         <%= image_tag(@char_scenarios[1].char_scen_img_file, class: "rawimg") %>
                                       </li>
                                       <li class="ui-widget-content ui-corner-tr scens col-md-2">
-                                        <h5 class="ui-widget-header words">Cam coaches Manny in football</h5>
-                                         <%= image_tag("scen3.jpg", class: "rawimg") %>
+                                        <h5 class="ui-widget-header words"><%= @char_scenarios[2].caption %></h5>
+                                         <%= image_tag(@char_scenarios[2].char_scen_img_file, class: "rawimg") %>
                                       </li>
                                       <li class="ui-widget-content ui-corner-tr scens col-md-2">
-                                        <h5 class="ui-widget-header words">Francis stuffs Timmy in a locker</h5>
-                                         <%= image_tag("scen4.jpg", class: "rawimg") %>
+                                        <h5 class="ui-widget-header words"><%= @char_scenarios[3].caption %></h5>
+                                         <%= image_tag(@char_scenarios[3].char_scen_img_file, class: "rawimg") %>
                                       </li>
                                       <li class="ui-widget-content ui-corner-tr scens col-md-2">
-                                        <p class="ui-widget-header words">Spongebob and Patrick steal a balloon</p>
-                                         <%= image_tag("scen6.jpg", class: "rawimg") %>
+                                        <p class="ui-widget-header words"><%= @char_scenarios[4].caption %></p>
+                                         <%= image_tag(@char_scenarios[4].char_scen_img_file, class: "rawimg") %>
                                       </li>
 
                                     </ul>
