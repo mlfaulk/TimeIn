@@ -16,7 +16,7 @@ class Visit < ActiveRecord::Base
 		elsif (reason_num == 6) then
 			return "was agressive or violent in class"
 		elsif (reason_num == 7) then
-			return "did something else that is against the rules"
+			return "did something that is against the rules"
 		end
 
 	end
