@@ -93,6 +93,8 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
                                     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+                                      <!--each one of these li elements needs an element called "correct_flag" that is either "good" or "bad". So, we could store this in char_scenarios[n].correct_answer or something like that-->
+                                      
                                       <li class="ui-widget-content ui-corner-tr scens rounded">
                                         <h5 class="ui-widget-header words"><%= @char_scenarios[0].caption %></h5>
                                          <%= image_tag(@char_scenarios[0].char_scen_img_file, class: "rawimg") %>
@@ -226,7 +228,10 @@
         var $list = $( "ul", $good ).length ?
           $( "ul", $good ) :
           $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $good );
+      /* correct_flag == ($item.attr('correct')=='good')*//
+
       addon($item, $list);
+
 
       });
 
@@ -238,6 +243,7 @@
         var $list = $( "ul", $bad ).length ?
           $( "ul", $bad ) :
           $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $bad );
+          /* correct_flag == ($item.attr('correct')=='bad') */
         addon($item, $list);
       });
     }
@@ -248,6 +254,9 @@
           .appendTo( $gallery )
           .fadeIn();
         $item.animate({ width: "15%" })
+        /* correct_flag == false*/
+
+
       });
     }
   });
