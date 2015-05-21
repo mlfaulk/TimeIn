@@ -58,7 +58,7 @@ body {
     background-position: top center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;   
-    height:100%;
+    height: 100%;
 }
 
 .icon {
@@ -151,6 +151,75 @@ body {
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
+.character-face {
+    width: 274px;
+	height: 224px;
+}
+
+.face-container img {
+    border-radius: 110px;
+	-webkit-border-radius: 110px;
+	-moz-border-radius: 110px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.model-popup {
+    display: none;
+    background: rgb(240, 240, 240);
+    font-family: "Trebuchet MS", Helvetica, sans-serif; 
+    font-size: 45px;
+    padding: 12px;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width:40%;
+    z-index: 99999;
+	border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+}
+
+.model-title {
+    font-family: "Trebuchet MS", Helvetica, sans-serif; 
+    font-size: 40px;
+}
+
+.model-text {
+    font-family: "Trebuchet MS", Helvetica, sans-serif; 
+    font-weight: lighter;
+    font-size: 21px;
+}
+
+.model-close {
+    color: rgba(159, 194, 147, 1);
+    font-family: 'Unkempt', cursive;
+    font-size: 24px;
+}
+
+.model-close:hover {
+    color: rgba(125, 159, 232, 1);
+}
+
+#model-mask {
+    display: none;
+    background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    z-index: 999;
+}
+
 .vl {
     border-right: solid;
     border-width: 2px;
@@ -180,6 +249,17 @@ body {
     font-family: 'Unkempt', cursive;
     font-size: 20px;
     padding-top: 5px;
+}
+
+.character-title {
+    font-family: 'Unkempt', cursive;
+    font-size: 26px;
+    text-align: center;
+}
+
+.character-desc {
+    font: 19px;
+    text-align: center;
 }
 
 .desc {
@@ -425,8 +505,10 @@ a.arrow-scroll:focus {
 .large_box {
     width: 100%;
     height: 200px;
-    opacity: .6;
+    opacity: .8;
+    font-size: 30px;
     background-color: white; 
+    word-break: break-word;
 }
 
 .medium_box {
@@ -436,6 +518,7 @@ a.arrow-scroll:focus {
     opacity: .8;
     background-color: white; 
     word-break: break-word;
+    color: black;
 }
 
 .shift-left {
@@ -552,7 +635,7 @@ a:hover {
 
 
 .large {
-    font-size: 35px;
+    font-size: 50px;
 }
 
 .strip {
