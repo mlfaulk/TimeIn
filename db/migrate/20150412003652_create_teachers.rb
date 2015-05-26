@@ -5,7 +5,7 @@ class CreateTeachers < ActiveRecord::Migration
     	t.string 	:firstname
     	t.string	:lastname
       t.string  :password
-    	#password
+    	t.string  :phone_number
     	#photo
       t.timestamps
     end

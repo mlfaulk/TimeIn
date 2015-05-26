@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150518235534) do
     t.string   "reason_num"
     t.string   "task_choice"
     t.text     "task_text"
+    t.text     "what_happened_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

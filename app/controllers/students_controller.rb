@@ -14,6 +14,8 @@ class StudentsController < ApplicationController
           	@namesArray[count] = [student.firstname + " " + student.lastname, student.firstname]
             count = count + 1
         end
+
+
 	end
 
 
@@ -53,6 +55,7 @@ class StudentsController < ApplicationController
 			new_visit.date_time = Time.now
 			new_visit.end_time=-1
 			new_visit.reason_num = params[:reason_num]
+			new_visit.what_happened_text = params[:what_happened_text]
 			new_visit.save
 			#update visit count
 			visits = student.visit_count
@@ -60,6 +63,7 @@ class StudentsController < ApplicationController
 			student.current_reason_num = params[:reason_num]
 			student.current_visit_id = new_visit.id
 			student.save
+
 			redirect_to action: "character", id: student.id
 		end
 	end
