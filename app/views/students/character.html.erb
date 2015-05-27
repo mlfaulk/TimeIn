@@ -155,6 +155,8 @@
 
 <script>
 
+attempts = 0;
+
 function validateCharForm() {
     console.log("in validate fxn");
     var input = document.forms["char_form"]["input"].value;
@@ -191,7 +193,12 @@ function validateCharForm() {
         document.getElementById("checkboxError").innerHTML = "Oops!  You must check the correct boxes before you may continue.";
     } else {
         //if the wrong ones are checked:
-        document.getElementById("checkboxError").innerHTML = "Oops!  That is not the correct answer.  Try again!";
+        attempts++;
+        if (attempts > 2) {
+            document.getElementById("checkboxError").innerHTML = "Oops!  That is not the correct answer.  If you're confused, try clicking the left arrow to go back to the previous page to see some words that describe good character.";
+        } else {
+            document.getElementById("checkboxError").innerHTML = "Oops!  That is not the correct answer.  Try again!";
+        }
     }
     document.getElementById("checkboxError").style.visibility = "visible";
     //character word is correct so get rid of those errors

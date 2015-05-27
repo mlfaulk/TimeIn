@@ -103,7 +103,7 @@
                                 <div class="face-container"> <%= image_tag("hiccup.jpg", class: "character-face") %></div>
                                 <div id="model-desc" class="model-popup">
                                     <div class="model-title">Hiccup</div>
-                                    <p class="model-text">Even though hiccup is not as strong or popular as the other boys in his town, he is smart, caring, and honest. By walking up to a deadly dragon, Hiccup is <b>brave</b> and does not let his fear hold him back. He shows <b>resilience</b> by knowing that it is okay to be different and always trying his best.</p>
+                                    <p class="model-text">Even though Hiccup is not as strong or popular as the other boys in his town, he is smart, caring, and honest. By walking up to a deadly dragon, Hiccup is <b>brave</b> and does not let his fear hold him back. He shows <b>resilience</b> by knowing that it is okay to be different and always trying his best.</p>
                                     <div class="model-close"><b>DONE</b></div>
                                 </div>
                             </div>
@@ -171,23 +171,23 @@
                                     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
                                       <!--each one of these li elements needs an element called "correct_flag" that is either "good" or "bad". So, we could store this in char_scenarios[n].correct_answer or something like that-->
                                       
-                                      <li class="ui-widget-content ui-corner-tr scens rounded">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded" goodchar= <%= @char_scenarios[0].good_char %> index = 0 >
                                         <h5 class="ui-widget-header words"><%= @char_scenarios[0].caption %></h5>
                                          <%= image_tag(@char_scenarios[0].char_scen_img_file, class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens rounded">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded" goodchar= <%= @char_scenarios[1].good_char %> index = 1>
                                         <h5 class="ui-widget-header words"><%= @char_scenarios[1].caption %></h5>
                                          <%= image_tag(@char_scenarios[1].char_scen_img_file, class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens rounded">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded" goodchar= <%= @char_scenarios[2].good_char %> index = 2>
                                         <h5 class="ui-widget-header words"><%= @char_scenarios[2].caption %></h5>
                                          <%= image_tag(@char_scenarios[2].char_scen_img_file, class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens rounded">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded" goodchar= <%= @char_scenarios[3].good_char %> index = 3>
                                         <h5 class="ui-widget-header words"><%= @char_scenarios[3].caption %></h5>
                                          <%= image_tag(@char_scenarios[3].char_scen_img_file, class: "rawimg") %>
                                       </li>
-                                      <li class="ui-widget-content ui-corner-tr scens rounded">
+                                      <li class="ui-widget-content ui-corner-tr scens rounded" goodchar= <%= @char_scenarios[4].good_char %> index = 4>
                                         <p class="ui-widget-header words"><%= @char_scenarios[4].caption %></p>
                                          <%= image_tag(@char_scenarios[4].char_scen_img_file, class: "rawimg") %>
                                       </li>
@@ -197,6 +197,9 @@
                             </div>
                             
                             <div class="row filler-small"></div>
+
+                            <!-- ERROR MESSAGE -->
+                            <p class="desc" id="drag_drop_error"></p>
 
                             <!--Good and bad character boxes*/-->
                             <div id="char" class="row">
@@ -216,7 +219,8 @@
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">                               
-                               <p class="finish orange-text"><%= link_to "FINISH", { controller: "students", action: "learn", id: params[:id]}, class: "finish orange-text no-underline" %></p>
+                               
+                               <%= link_to 'FINISH', { controller: "students", action: "learn", id: params[:id]}, :id => 'finish_drag_drop', class: "finish orange-text no-underline" %>
                             </div>
                             <div class="col-md-3"></div>
                         </div>
@@ -332,6 +336,14 @@
       }
     });
 
+    //incorrect = false;
+
+    //initialize array where each index represents a char_scenario.  
+    // -1 : not yet dragged
+    // 0 : incorrectly dragged
+    // 1 : correctly dragged
+    char_boxes = [-1, -1, -1, -1, -1];
+
     function addon($item, $box) {
         $item.appendTo( $box ).fadeIn(function() {
           $item
@@ -342,26 +354,51 @@
 
     // image deletion function
     function classifyGood( $item) {
-      $item.fadeOut(function() {
+        var correct_flag = ($item.attr('goodchar') == 1)
+        if (correct_flag == false) {
+            //item placed in wrong box
+            index = $item.attr('index');
+            console.log("index: " + index);
+            char_boxes[index] = 0;
+            
+        } else {
+            //item placed in correct box
+            index = $item.attr('index');
+            console.log("index: " + index);
+            char_boxes[index] = 1;
+            
+        }
+        $item.fadeOut(function() {
         var $list = $( "ul", $good ).length ?
           $( "ul", $good ) :
           $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $good );
-      /* correct_flag == ($item.attr('correct')=='good')*/
 
-      addon($item, $list);
-
-
+      addon($item, $list); 
       });
 
     }
 
 
     function classifyBad( $item) {
-      $item.fadeOut(function() {
+        var correct_flag = ($item.attr('goodchar')== 0) 
+        if (correct_flag == false) {
+            //item placed in wrong box
+            index = $item.attr('index');
+            console.log("index: " + index);
+            char_boxes[index] = 0;
+           
+        } else {
+            //item placed in correct box
+            index = $item.attr('index');
+            console.log("index: " + index);
+            char_boxes[index] = 1;
+           
+        }
+        $item.fadeOut(function() {
         var $list = $( "ul", $bad ).length ?
           $( "ul", $bad ) :
           $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $bad );
-          /* correct_flag == ($item.attr('correct')=='bad') */
+  
         addon($item, $list);
       });
     }
@@ -377,6 +414,41 @@
 
       });
     }
+
+    $('#finish_drag_drop').click(function (event) {
+        //console.log("incorrect: " + incorrect);
+        var incorrect = false;
+        for (var i = 0; i < 5; i++) {
+            console.log("char_boxes[i]: " + char_boxes[i]);
+            if (char_boxes[i] == -1) {
+                // at least one wasn't dragged
+                $( "#drag_drop_error" ).html( "Oops!  You need to label all the boxes as either good or bad character.  Try again! " );
+                incorrect = true;
+                break;
+            } 
+            if (char_boxes[i] == 0) {
+                // at least one was dragged incorrectly
+                $( "#drag_drop_error" ).html( "Oops!  That is not the correct answer.  Try again!" );
+                incorrect = true;
+            }
+        }
+        if (incorrect) {
+            //display error message
+            $( "#drag_drop_error" ).css( "visibility", "visible" );
+            // make button orange again
+            $( "#finish_drag_drop" ).css( "color", "rgba(227, 138, 120, 1)");
+            //don't redirect page
+            event.preventDefault();
+           
+
+        } else {
+            //alert('Hooray!');
+
+            //redirect
+        }
+        
+        //return true;
+    });
   });
 </script>
 

@@ -858,6 +858,16 @@ a.action-step:hover {}
     color: rgba(227, 138, 120, 1);
 }
 
+#drag_drop_error {
+    visibility: hidden;
+    color: rgba(227, 138, 120, 1);
+}
+
+#finish_drag_drop:hover {
+    color: white;
+}
+
+
 .drop-hover {
      opacity: 0.4;
 }

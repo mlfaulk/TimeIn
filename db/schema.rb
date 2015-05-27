@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150518235534) do
 
   create_table "resources", force: true do |t|
     t.string   "char_scen_img_file"
+    t.integer  "good_char"
     t.string   "caption"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150518235534) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "password"
+    t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
