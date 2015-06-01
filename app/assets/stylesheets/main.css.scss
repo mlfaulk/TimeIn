@@ -390,6 +390,14 @@ body {
     padding-top: 2%;
 }
 
+.quiz-align {
+    text-align: left;
+    align-content: left;
+    padding-left: 55px;
+    font-size: 16pt;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
 .logo {
     font-family: 'Unkempt', cursive;
     font-size: 25px;
@@ -683,6 +691,8 @@ a.no-underline:hover, a.no-underline:focus {
     color: white;
 }
 
+
+
 .textbox { 
     color: black;
     border: 1px solid #848484; 
@@ -763,7 +773,7 @@ a.no-underline:hover, a.no-underline:focus {
 
 .submit {
     text-align: center;
-    opacity: .8;
+    opacity: .9;
     font-size: 25px;
     font-weight: bold;
     font-family: 'Unkempt', cursive;
